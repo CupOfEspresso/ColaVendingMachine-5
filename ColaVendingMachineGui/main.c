@@ -19,6 +19,12 @@
 
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow)
 {
+	srand(time(0));
+	sim_t simulation = { (rand() % 100), (rand() % 50 + 5), 0, 0, 0, 0 };
+	sim_t* pSim = &simulation;
+
+
+
 	WNDCLASSW wc = { 0 };
 
 	wc.hbrBackground = CreateSolidBrush(RGB(255, 255, 255));
@@ -26,20 +32,21 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	wc.hInstance = hInst;
 	wc.lpszClassName = L"CVM_5_GUI";
 	wc.lpfnWndProc = WindowProcedure;
+	wc.cbWndExtra = sizeof(pSim);
 
 	if (!RegisterClassW(&wc))
 		return -1;
 
-	CreateWindowW(L"CVM_5_GUI", L"Cola Vending Machine v5", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 1050, 800, NULL, NULL, NULL, NULL);
+	HWND H_Window = CreateWindowExW(WS_EX_CLIENTEDGE, L"CVM_5_GUI", L"Cola Vending Machine v5", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 1050, 800, NULL, NULL, NULL, pSim);
 
+	SetWindowLongPtr(H_Window, GWLP_USERDATA, (LONG_PTR)pSim);
+	
 	MSG msg = { 0 };
 
 	while (GetMessageW(&msg, NULL, NULL, NULL))
 	{
-
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
-
 	}
 
 	return 0;
@@ -47,21 +54,22 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 
 LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 {
-	int Drink = 0;
-	sim_t* pSim = INIT_Simulations(H_Window);;
+	//int Drink = 0;
+	sim_t* pSim = GetWindowLongPtr(H_Window, GWLP_USERDATA);
 
 	switch (msg) {
 
 	case WM_CREATE:
-		
+	{
 		INIT_Button(H_Window);
-		INIT_Static(H_Window);
+		INIT_Static(H_Window, pSim);
 		INIT_Menu(H_Window);
 		INIT_Edit(H_Window);
-
 		break;
+	}
 	case WM_COMMAND:
-
+	{
+		//sim_t* 
 		switch (wp) {
 		case CM_MENU_ITEM_ADMIN:
 			MessageBoxW(H_Window, L"This function is yet to be implemented", L"WIP", MB_OK);
@@ -104,23 +112,26 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 			break;
 			//?------------------------------------------------?//
 		case CM_DRINK_BUTTON_PRESSED_1:
-
+			CHP_CheckIfEnough(pSim, D_COLA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_2:
-
+			CHP_CheckIfEnough(pSim, D_PEPSI, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_3:
-
+			CHP_CheckIfEnough(pSim, D_FANTA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_4:
-
+			CHP_CheckIfEnough(pSim, D_ICE_TEA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_5:
-
+			CHP_CheckIfEnough(pSim, D_SPRITE, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_6:
-
+			CHP_CheckIfEnough(pSim, D_SPA, H_Window);
 			break;
+
+		case CM_CHANGE_BUTTON_PRESSED:
+
 		case CM_PIN_BUTTON_PRESSED_1:
 
 			break;
@@ -151,9 +162,9 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 		case CM_PIN_BUTTON_PRESSED_0:
 
 			break;
-
 		}
 		break;
+	}
 	case WM_CTLCOLORSTATIC:
 	{
 		hb = CreateSolidBrush(RGB(255, 255, 255));

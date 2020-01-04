@@ -1,6 +1,15 @@
 ﻿  CoinHandelingProcedure.c
   Initialization.c
-C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\Initialization.c(99,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\Initialization.c(103,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+  UserDrinkSelection.c
+  WriteToScreenBuffer.c
+  main.c
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(22,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(46,37): warning C4047: 'function': 'UINT' differs in levels of indirection from 'void *'
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(46,37): warning C4024: 'GetMessageW': different types for formal and actual parameter 3
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(46,43): warning C4047: 'function': 'UINT' differs in levels of indirection from 'void *'
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(46,43): warning C4024: 'GetMessageW': different types for formal and actual parameter 4
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(58,1): warning C4047: 'initializing': 'sim_t *' differs in levels of indirection from 'LONG'
   Generating Code...
-C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\Initialization.c(109): warning C4172: returning address of local variable or temporary: simulation
+C:\Users\AL20741\source\repos\ColaVendingMachineGui\ColaVendingMachineGui\main.c(186): warning C4715: 'WindowProcedure': not all control paths return a value
   ColaVendingMachineGui.vcxproj -> C:\Users\AL20741\source\repos\ColaVendingMachineGui\Debug\ColaVendingMachineGui.exe

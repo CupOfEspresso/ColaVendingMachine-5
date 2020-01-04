@@ -1,7 +1,7 @@
 #ifndef USERDRINKSELECTION_H
 #define USERDRINKSELECTION_H
 
-#define BUFF 15
+#define BUFF 128
 
 #include "ColaVendingMachineGui.h"
 #include "Initialization.h"
@@ -14,9 +14,9 @@ typedef struct {
 	int priceInCents;
 }drink_t;
 
-drink_t UDS_Price(drink_t, int, int);
-drink_t UDS_Drink(drink_t, wchar_t whichDrink[]);
-drink_t UDS_Setup(int);
+void UDS_Price(drink_t*, int, int);
+void UDS_Drink(drink_t*, wchar_t whichDrink[]);
+void UDS_Setup(int, drink_t*);
 
 
 #endif // !USERDRINKSELECTION_H

@@ -1,7 +1,5 @@
 #include "Initialization.h"
 
-
-
 int INIT_Button(HWND H_Window)
 {
 	//# Buttons for inserting the coins
@@ -32,7 +30,7 @@ int INIT_Button(HWND H_Window)
 	CreateWindowW(L"button", L"0",   WS_VISIBLE | WS_CHILD, 610, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_0, NULL, NULL);
 	CreateWindowW(L"button", L"OK",  WS_VISIBLE | WS_CHILD, 650, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_9, NULL, NULL);
 
-	//# Buttons for The drink selection
+	//# Buttons for the drink selection
 	CreateWindowW(L"button", L"Cola | \u20ac2,50",    WS_CHILD | WS_VISIBLE | SS_CENTER, 20, 20, 110, 30, H_Window,   (HMENU)CM_DRINK_BUTTON_PRESSED_1, NULL, NULL);
 	CreateWindowW(L"button", L"Pepsi | \u20ac2,30",   WS_CHILD | WS_VISIBLE | SS_CENTER, 20, 80, 110, 30, H_Window,   (HMENU)CM_DRINK_BUTTON_PRESSED_2, NULL, NULL);
 	CreateWindowW(L"button", L"Fanta | \u20ac2,40",   WS_CHILD | WS_VISIBLE | SS_CENTER, 20, 140, 110, 30, H_Window,  (HMENU)CM_DRINK_BUTTON_PRESSED_3, NULL, NULL);
@@ -40,10 +38,13 @@ int INIT_Button(HWND H_Window)
 	CreateWindowW(L"button", L"Sprite | \u20ac2,60",  WS_CHILD | WS_VISIBLE | SS_CENTER, 140, 80, 110, 30, H_Window,  (HMENU)CM_DRINK_BUTTON_PRESSED_5, NULL, NULL);
 	CreateWindowW(L"button", L"SPA | \u20ac2,20",     WS_CHILD | WS_VISIBLE | SS_CENTER, 140, 140, 110, 30, H_Window, (HMENU)CM_DRINK_BUTTON_PRESSED_6, NULL, NULL);
 
+	//# Buttons for the Change return
+	CreateWindowW(L"button", L"Change | Donate", WS_CHILD | WS_VISIBLE | SS_CENTER, 440, 703, 110, 30, H_Window, (HMENU)CM_CHANGE_BUTTON_PRESSED, NULL, NULL);
+
 	return 0;
 }
 
-int INIT_Static(HWND H_Window)
+int INIT_Static(HWND H_Window, sim_t* pSim)
 {
 	//# Static for "Coins" text
 	CreateWindowW(L"static", L"Coins",  WS_CHILD | WS_VISIBLE | SS_CENTER, 800, 640, 100, 18, H_Window, NULL, NULL, NULL);
@@ -68,6 +69,9 @@ int INIT_Static(HWND H_Window)
 	CreateWindowW(L"static", L"Wallet", WS_CHILD | WS_VISIBLE | SS_CENTER, 30, 700, 100, 18,  H_Window, NULL, NULL, NULL);
 	H_Change_Wallet_Euros = CreateWindowW(L"static", L"0", WS_CHILD | WS_VISIBLE | SS_CENTER | WS_BORDER, 130, 700, 50, 18, H_Window, NULL, NULL, NULL);
 	H_Change_Wallet_Cents = CreateWindowW(L"static", L"0", WS_CHILD | WS_VISIBLE | SS_CENTER | WS_BORDER, 180, 700, 50, 18, H_Window, NULL, NULL, NULL);
+	
+
+
 
 	return 0;
 }
@@ -94,7 +98,7 @@ int INIT_Edit(HWND H_Window)
 	return 0;
 }
 
-sim_t* INIT_Simulations(HWND H_Window)
+sim_t* INIT_Simulations()
 {
 	srand(time(0));
 
@@ -102,9 +106,7 @@ sim_t* INIT_Simulations(HWND H_Window)
 	int euros = rand() % 50 + 5;
 
 	//# setting the begin values for the simulation
-	
-	sim_t simulation = { cents, euros, 0, 0, 0, 0};
-	sim_t* pSim = &simulation;
+	//sim_t* pSim = &simulation;
 
-	return pSim;
+	return NULL;
 }

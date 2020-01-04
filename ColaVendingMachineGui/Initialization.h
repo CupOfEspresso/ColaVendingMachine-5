@@ -1,7 +1,5 @@
 #ifndef INITIALIZATION_H
 #define INITIALIZATION_H
-#include <time.h>
-#include <stdlib.h>
 
 typedef struct sim_t{
 	int moneyInWalletCents;
@@ -18,10 +16,10 @@ typedef struct sim_t{
 #include "WriteToScreenBuffer.h"
 
 int INIT_Button(HWND);
-int INIT_Static(HWND);
+int INIT_Static(HWND, sim_t*);
 int INIT_Menu(HWND);
 int INIT_Edit(HWND);
-sim_t* INIT_Simulations(HWND);
+sim_t* INIT_Simulations();
 
 
 
