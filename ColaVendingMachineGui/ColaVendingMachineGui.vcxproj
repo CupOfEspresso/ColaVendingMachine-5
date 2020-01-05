@@ -142,6 +142,7 @@
     <ClCompile Include="CoinHandelingProcedure.c" />
     <ClCompile Include="Initialization.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="PayWithDebitCard.c" />
     <ClCompile Include="UserDrinkSelection.c" />
     <ClCompile Include="WriteToScreenBuffer.c" />
   </ItemGroup>
@@ -149,6 +150,7 @@
     <ClInclude Include="ColaVendingMachineGui.h" />
     <ClInclude Include="CoinHandelingProcedure.h" />
     <ClInclude Include="Initialization.h" />
+    <ClInclude Include="PayWithDebitCard.h" />
     <ClInclude Include="UserDrinkSelection.h" />
     <ClInclude Include="WriteToScreenBuffer.h" />
   </ItemGroup>

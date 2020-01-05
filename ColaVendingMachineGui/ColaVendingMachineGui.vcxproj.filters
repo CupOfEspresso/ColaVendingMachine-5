@@ -30,6 +30,9 @@
     <ClCompile Include="UserDrinkSelection.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PayWithDebitCard.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ColaVendingMachineGui.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserDrinkSelection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PayWithDebitCard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

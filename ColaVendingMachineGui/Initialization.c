@@ -26,9 +26,9 @@ int INIT_Button(HWND H_Window)
 	CreateWindowW(L"button", L"7",   WS_VISIBLE | WS_CHILD, 570, 663, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_7, NULL, NULL);
 	CreateWindowW(L"button", L"8",   WS_VISIBLE | WS_CHILD, 610, 663, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_8, NULL, NULL);
 	CreateWindowW(L"button", L"9",   WS_VISIBLE | WS_CHILD, 650, 663, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_9, NULL, NULL);
-	CreateWindowW(L"button", L"DEL", WS_VISIBLE | WS_CHILD, 570, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_7, NULL, NULL);
+	CreateWindowW(L"button", L"DEL", WS_VISIBLE | WS_CHILD, 570, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_DEL, NULL, NULL);
 	CreateWindowW(L"button", L"0",   WS_VISIBLE | WS_CHILD, 610, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_0, NULL, NULL);
-	CreateWindowW(L"button", L"OK",  WS_VISIBLE | WS_CHILD, 650, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_9, NULL, NULL);
+	CreateWindowW(L"button", L"OK",  WS_VISIBLE | WS_CHILD, 650, 703, 35, 30, H_Window, (HMENU)CM_PIN_BUTTON_PRESSED_OK, NULL, NULL);
 
 	//# Buttons for the drink selection
 	CreateWindowW(L"button", L"Cola | \u20ac2,50",    WS_CHILD | WS_VISIBLE | SS_CENTER, 20, 20, 110, 30, H_Window,   (HMENU)CM_DRINK_BUTTON_PRESSED_1, NULL, NULL);
@@ -39,7 +39,10 @@ int INIT_Button(HWND H_Window)
 	CreateWindowW(L"button", L"SPA | \u20ac2,20",     WS_CHILD | WS_VISIBLE | SS_CENTER, 140, 140, 110, 30, H_Window, (HMENU)CM_DRINK_BUTTON_PRESSED_6, NULL, NULL);
 
 	//# Buttons for the Change return
-	CreateWindowW(L"button", L"Change | Donate", WS_CHILD | WS_VISIBLE | SS_CENTER, 440, 703, 110, 30, H_Window, (HMENU)CM_CHANGE_BUTTON_PRESSED, NULL, NULL);
+	CreateWindowW(L"button", L"Change | Donate", WS_CHILD | WS_VISIBLE | SS_CENTER, 440, 703, 120, 30, H_Window, (HMENU)CM_CHANGE_BUTTON_PRESSED, NULL, NULL);
+
+	//# Buttons for Entering debit card
+	H_DebitCard = CreateWindowW(L"button", L"Enter debitcard", WS_CHILD | WS_VISIBLE | SS_CENTER, 570, 555, 115, 20, H_Window, (HMENU)CM_DEBITCARD_BUTTON_PRESSED, NULL, NULL);
 
 	return 0;
 }
@@ -50,7 +53,7 @@ int INIT_Static(HWND H_Window, sim_t* pSim)
 	CreateWindowW(L"static", L"Coins",  WS_CHILD | WS_VISIBLE | SS_CENTER, 800, 640, 100, 18, H_Window, NULL, NULL, NULL);
 
 	//# Static for "Pin" text
-	CreateWindowW(L"static", L"Pin",    WS_CHILD | WS_VISIBLE | SS_CENTER, 570, 555, 25, 20,  H_Window, NULL, NULL, NULL);
+	//CreateWindowW(L"static", L"Pin",    WS_CHILD | WS_VISIBLE | SS_CENTER, 570, 555, 25, 20,  H_Window, NULL, NULL, NULL);
 
 	//# Static for "Debug" text
 	CreateWindowW(L"static", L"Debug",  WS_CHILD | WS_VISIBLE | SS_CENTER, 480, 2, 550, 18,   H_Window, NULL, NULL, NULL);
@@ -90,23 +93,10 @@ int INIT_Menu(HWND H_Window)
 int INIT_Edit(HWND H_Window)
 {
 	//# Edit for the Card, this is simulating a card reader
-	H_Card = CreateWindowW(L"edit", L"Card ID", WS_CHILD | WS_VISIBLE | SS_RIGHT | WS_BORDER, 595, 555, 90, 20, H_Window, NULL, NULL, NULL);
+	//H_Card = CreateWindowW(L"edit", L"Card ID", WS_CHILD | WS_VISIBLE | SS_RIGHT | WS_BORDER, 595, 555, 90, 20, H_Window, NULL, NULL, NULL);
 
 	//# Edit for the debug messsages
 	H_Change_Debug = CreateWindowW(L"edit", NULL, WS_CHILD | WS_VISIBLE | SS_LEFT | WS_BORDER, 480, 20, 550, 525, H_Window, NULL, NULL, NULL);
 
 	return 0;
-}
-
-sim_t* INIT_Simulations()
-{
-	srand(time(0));
-
-	int cents = rand() % 100;
-	int euros = rand() % 50 + 5;
-
-	//# setting the begin values for the simulation
-	//sim_t* pSim = &simulation;
-
-	return NULL;
 }

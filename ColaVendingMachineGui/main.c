@@ -20,7 +20,20 @@
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow)
 {
 	srand(time(0));
-	sim_t simulation = { (rand() % 100), (rand() % 50 + 5), 0, 0, 0, 0 };
+	sim_t simulation = { 
+		(rand() % 100), // moneyInWalletCents
+		(rand() % 50 + 5), // moneyInWalletEuros
+		 0, // changeInMachineCents
+		 0, // changeInMachineEuros
+		 0, // moneyInMachineCents
+		 0, // moneyInMachineEuros
+		 0, // isDebitCardEntered
+		 0, // postionInCardCode
+		{0, 0, 0, 0}, // debitCardCode
+		{1, 3, 3, 7}, //POINTOFCONCEPTPASSWORD
+		 0 //hasPaid
+	};
+
 	sim_t* pSim = &simulation;
 
 
@@ -72,7 +85,7 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 		//sim_t* 
 		switch (wp) {
 		case CM_MENU_ITEM_ADMIN:
-			MessageBoxW(H_Window, L"This function is yet to be implemented", L"WIP", MB_OK);
+			
 			break;
 		case CM_COIN_BUTTON_PRESSED_1:
 			CHP_CheckCoins(pSim, V_1_CENTS);
@@ -129,38 +142,49 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 		case CM_DRINK_BUTTON_PRESSED_6:
 			CHP_CheckIfEnough(pSim, D_SPA, H_Window);
 			break;
-
+			//?------------------------------------------------?//
 		case CM_CHANGE_BUTTON_PRESSED:
-
+			CHP_ChangeHandeling(pSim);
+			break;
+			//?------------------------------------------------?//
+		case CM_DEBITCARD_BUTTON_PRESSED:
+			PWDC_EnterAndRemoveDebitCard(pSim);
+			break;
 		case CM_PIN_BUTTON_PRESSED_1:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 1);
 			break;
 		case CM_PIN_BUTTON_PRESSED_2:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 2);
 			break;
 		case CM_PIN_BUTTON_PRESSED_3:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 3);
 			break;
 		case CM_PIN_BUTTON_PRESSED_4:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 4);
 			break;
 		case CM_PIN_BUTTON_PRESSED_5:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 5);
 			break;
 		case CM_PIN_BUTTON_PRESSED_6:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 6);
 			break;
 		case CM_PIN_BUTTON_PRESSED_7:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 7);
 			break;
 		case CM_PIN_BUTTON_PRESSED_8:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 8);
 			break;
 		case CM_PIN_BUTTON_PRESSED_9:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 9);
 			break;
 		case CM_PIN_BUTTON_PRESSED_0:
-
+			PWDC_AddToDebitCardCodeBuffer(pSim, 0);
+			break;
+		case CM_PIN_BUTTON_PRESSED_OK:
+			PWDC_CheckDebitCardCode(pSim);
+			break;
+		case CM_PIN_BUTTON_PRESSED_DEL:
+			PWDC_RemoveFromDebitCardCodeBuffer(pSim, 0);
 			break;
 		}
 		break;

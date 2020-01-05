@@ -8,6 +8,11 @@ typedef struct sim_t{
 	int changeInMachineEuros;
 	int moneyInMachineCents;
 	int moneyInMachineEuros;
+	int isDebitCardEntered;
+	int postionInCardCode;
+	int debitCardCode[4];
+	int POINTOFCONCEPTPASSWORD[4];
+	int hasPaid;
 } sim_t;
 
 #include "ColaVendingMachineGui.h"
@@ -19,7 +24,6 @@ int INIT_Button(HWND);
 int INIT_Static(HWND, sim_t*);
 int INIT_Menu(HWND);
 int INIT_Edit(HWND);
-sim_t* INIT_Simulations();
 
 
 

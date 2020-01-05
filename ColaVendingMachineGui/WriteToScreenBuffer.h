@@ -15,6 +15,7 @@ void WTSB_StaticChangeCents(sim_t*);
 void WTSB_StaticChangeEuros(sim_t*);
 void WTSB_StaticWalletCents(sim_t*);
 void WTSB_StaticWalletEuros(sim_t*);
+void WTSB_Redraw(sim_t*);
 
 #endif // !WRITETOSCREENBUFFER_H
 

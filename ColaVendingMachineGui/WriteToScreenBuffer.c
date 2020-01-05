@@ -5,7 +5,7 @@ void WTSB_StaticChar(wchar_t buffer, HWND handler)
 {
 	wchar_t bufferEdited[BUFFSIZE];
 
-	wsprintfW(bufferEdited, L"DEBUG: %s", buffer);
+	wsprintf(bufferEdited, L"DEBUG: %s", buffer);
 	SetWindowText(handler, bufferEdited);
 }
 
@@ -55,4 +55,13 @@ void WTSB_StaticWalletEuros(sim_t* pSim)
 
 	wsprintf(bufferEdited, L"%d", pSim->moneyInWalletEuros);
 	SetWindowText(H_Change_Wallet_Euros, bufferEdited);
+}
+
+void WTSB_Redraw(sim_t* pSim) {
+	WTSB_StaticCashCents(pSim);
+	WTSB_StaticCashEuros(pSim);
+	WTSB_StaticChangeCents(pSim);
+	WTSB_StaticChangeEuros(pSim);
+	WTSB_StaticWalletCents(pSim);
+	WTSB_StaticWalletEuros(pSim);
 }

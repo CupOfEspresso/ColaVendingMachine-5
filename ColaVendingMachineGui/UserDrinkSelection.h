@@ -12,9 +12,10 @@ typedef struct {
 	wchar_t drinkName[BUFF];
 	int priceInEuros;
 	int priceInCents;
+	int priceTotaalCents;
 }drink_t;
 
-void UDS_Price(drink_t*, int, int);
+void UDS_Price(drink_t*, int);
 void UDS_Drink(drink_t*, wchar_t whichDrink[]);
 void UDS_Setup(int, drink_t*);
 
