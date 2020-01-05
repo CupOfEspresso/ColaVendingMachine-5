@@ -1,0 +1,68 @@
+@startuml
+
+title Windowprocedure Cola Vending Machine 5 GUI Edition
+
+[*] --> Initialised : Wm_CREATE, WM_PAINT, WM_CTLCOLORSTATIC / INIT_Button(), INIT_Static, INIT_Menu, INIT_Edit
+
+Initialised : sim_t simulation
+Initialised : ~*pSim = &simulation
+Initialised : pSim->moneyInWalletCents = (rand() % 100)
+Initialised : pSim->moneyInWalletEuros = (rand() % 50 + 5) 
+Initialised : pSim->changeInMachineCents = 0 
+Initialised : pSim->changeInMachineEuros = 0
+Initialised : pSim->moneyInMachineCents = 0
+Initialised : pSim->moneyInMachineEuros = 0 
+Initialised : pSim->isDebitCardEntered = 0
+Initialised : pSim->postionInCardCode = 0 
+Initialised : pSim->debitCardCode = {0, 0, 0, 0} 
+Initialised : pSim->POINTOFCONCEPTPASSWORD = {1, 3, 3, 7}
+Initialised : pSim->hasPaid 0 
+Initialised --> Windowprocedure
+
+Windowprocedure --> WM_COMMAND
+Windowprocedure --> WM_DESTROY
+
+WM_DESTROY --> [*]
+
+WM_COMMAND --> CM_COIN_BUTTON_PRESSED : CHP_CheckCoins()
+CM_COIN_BUTTON_PRESSED : pSim->moneyInMachineEuros = appropriate value
+CM_COIN_BUTTON_PRESSED : pSim->moneyInMachineCents = appropriate value
+
+WM_COMMAND --> CM_DRINK_BUTTON_PRESSED : CHP_CheckIfEnough()
+CM_DRINK_BUTTON_PRESSED --> UserDrinkSelection : If you could pay it / WTSB_Redraw()
+UserDrinkSelection --> Dispense_Drink : Deposites left over money in change buffer
+Dispense_Drink --> Windowprocedure
+
+CM_DRINK_BUTTON_PRESSED --> Windowprocedure : If you couldn't pay it 
+
+WM_COMMAND --> CM_CHANGE_BUTTON_PRESSED : CHP_ChangeHandeling
+CM_CHANGE_BUTTON_PRESSED --> Windowprocedure
+
+WM_COMMAND --> CM_DEBITCARD_BUTTON_PRESSED : PWDC_EnterAndRemoveDebitCard()
+CM_DEBITCARD_BUTTON_PRESSED --> Enter_debitcard : First time enters card
+CM_DEBITCARD_BUTTON_PRESSED --> Enter_debitcard : Second time takes card
+Enter_debitcard --> Windowprocedure
+
+WM_COMMAND --> CM_PIN_BUTTON_PRESSED : PWDC_AddToDebitCardCodeBuffer()
+CM_PIN_BUTTON_PRESSED --> Store_In_Buffer
+Store_In_Buffer --> Windowprocedure
+
+WM_COMMAND --> CM_PIN_BUTTON_PRESSED_OK : PWDC_RemoveFromDebitCardCodeBuffer()
+CM_PIN_BUTTON_PRESSED_OK --> Store_In_Buffer : Check storebuffer against database or in this case pSim->POINTOFCONCEPTPASSWORD
+Store_In_Buffer --> Windowprocedure
+
+WM_COMMAND --> CM_PIN_BUTTON_PRESSED_DEL : PWDC_CheckDebitCardCode()
+CM_PIN_BUTTON_PRESSED_OK --> Store_In_Buffer : Remove one digit form store buffer
+Store_In_Buffer --> Windowprocedure
+
+note right of Initialised #lime
+    initializing sim_t a struct that contents much of the system infomation,
+    and wil be accessed using pSim.
+end note
+
+note top of WM_COMMAND #lime
+    Because windows api use a lot of WM_COMMAND
+    I have simplified it to the base Commands.
+end note
+
+@enduml
