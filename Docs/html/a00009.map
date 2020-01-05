@@ -1,0 +1,12 @@
+<map id="ColaVendingMachineGui.h" name="ColaVendingMachineGui.h">
+<area shape="rect" id="node1" title=" " alt="" coords="312,5,487,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="381,304,468,331"/>
+<area shape="rect" id="node3" title=" " alt="" coords="165,155,229,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="253,155,314,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="541,155,599,181"/>
+<area shape="rect" id="node6" href="$a00014.html" title=" " alt="" coords="39,155,141,181"/>
+<area shape="rect" id="node7" href="$a00005.html" title=" " alt="" coords="244,379,419,405"/>
+<area shape="rect" id="node8" href="$a00029.html" title=" " alt="" coords="138,304,282,331"/>
+<area shape="rect" id="node9" href="$a00035.html" title=" " alt="" coords="263,229,415,256"/>
+<area shape="rect" id="node10" href="$a00023.html" title=" " alt="" coords="329,80,469,107"/>
+</map>
