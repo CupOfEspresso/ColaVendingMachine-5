@@ -5,6 +5,7 @@
 #include "Initialization.h"
 #include "UserDrinkSelection.h"
 #include "WriteToScreenBuffer.h"
+#include "AppendToDebugBuffer.h"
 
 
 void CHP_CheckIfEnough(sim_t* pSim, int, HWND);
@@ -16,6 +17,7 @@ void CHP_EurosToCentsInMachine(sim_t* pSim);
 void CHP_CalculatorEuros(sim_t* pSim, int);
 void CHP_CalculatorCents(sim_t* pSim, int);
 void CHP_ChangeHandeling(sim_t* pSim);
+void CHP_AdminDebugFunctionallity(sim_t* pSim);
 
 #endif // !COINHANDELINGPROCEDURE
 

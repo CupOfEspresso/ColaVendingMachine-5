@@ -1,0 +1,39 @@
+@startuml
+
+title Cola Vending Machine 5 GUI Edition
+
+package "User Interface Layer" {
+    [Display]
+    [Mouse]
+}
+
+package "System Control Layer" {
+    [Windowprocedure] #Blue
+}
+
+package "Subsystems Layer" {
+    [CoinHandelingProcedure]
+    [PayWithDebitCard]
+    [UserDrinkSelection]
+    [WriteToScreenbuffer]
+}
+
+package "Hardware Abstraction Layer" {
+    [Hardware IO]
+}
+
+[Windowprocedure] -up-> [Mouse]
+[Windowprocedure] -up-> [Display]
+
+[Windowprocedure] -down-> [CoinHandelingProcedure]
+[Windowprocedure] -down-> [PayWithDebitCard]
+[Windowprocedure] -down-> [UserDrinkSelection]
+[Windowprocedure] -down-> [WriteToScreenbuffer]
+
+[CoinHandelingProcedure] -down-> [Hardware IO]
+[PayWithDebitCard] -down-> [Hardware IO]
+[UserDrinkSelection] -down-> [Hardware IO]
+[WriteToScreenbuffer] -down-> [Hardware IO]
+
+
+@enduml

@@ -19,6 +19,8 @@ typedef struct sim_t{
 #include "CoinHandelingProcedure.h"
 #include "UserDrinkSelection.h"
 #include "WriteToScreenBuffer.h"
+#include "AppendToDebugBuffer.h"
+
 
 int INIT_Button(HWND);
 int INIT_Static(HWND, sim_t*);

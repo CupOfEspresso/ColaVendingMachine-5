@@ -62,6 +62,7 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 
 void CHP_CheckCoins(sim_t* pSim, int coinSize)
 {
+	/// This function Calculates the right values for each money related screen buffer
 	if ((pSim->moneyInWalletEuros > 0 && pSim->moneyInWalletCents > 0) ||
 	   (pSim->moneyInWalletEuros >= 0 && pSim->moneyInWalletCents > 0) ||
 	   (pSim->moneyInWalletEuros > 0 && pSim->moneyInWalletCents >= 0))
@@ -213,4 +214,13 @@ void CHP_ChangeHandeling(sim_t* pSim)
 	{
 		MessageBoxW(NULL, L"There is no change", L"Change", MB_OK);
 	}
+}
+
+void CHP_AdminDebugFunctionallity(sim_t* pSim)
+{
+	pSim->moneyInWalletEuros = 10000;
+
+	MessageBoxW(NULL, L"You chose admin this earns you \u20ac10000", L"admin", MB_OK);
+
+	WTSB_Redraw(pSim);
 }

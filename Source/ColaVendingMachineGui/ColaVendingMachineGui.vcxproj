@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AppendToDebugBuffer.c" />
     <ClCompile Include="CoinHandelingProcedure.c" />
     <ClCompile Include="Initialization.c" />
     <ClCompile Include="main.c" />
@@ -147,16 +148,25 @@
     <ClCompile Include="WriteToScreenBuffer.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AppendToDebugBuffer.h" />
     <ClInclude Include="ColaVendingMachineGui.h" />
     <ClInclude Include="CoinHandelingProcedure.h" />
     <ClInclude Include="Initialization.h" />
     <ClInclude Include="PayWithDebitCard.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="UserDrinkSelection.h" />
     <ClInclude Include="WriteToScreenBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ColaVendingMachine-5-windowprocedure.puml" />
     <None Include="ColaVendingMachine-5-layer.puml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico" />
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

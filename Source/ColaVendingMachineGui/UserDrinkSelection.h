@@ -7,6 +7,8 @@
 #include "Initialization.h"
 #include "CoinHandelingProcedure.h"
 #include "WriteToScreenBuffer.h"
+#include "AppendToDebugBuffer.h"
+
 
 typedef struct {
 	wchar_t drinkName[BUFF];

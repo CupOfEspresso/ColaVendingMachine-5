@@ -13,6 +13,8 @@
 #include "UserDrinkSelection.h"
 #include "WriteToScreenBuffer.h"
 #include "PayWithDebitCard.h"
+#include "AppendToDebugBuffer.h"
+
 
 LRESULT CALLBACK WindowProcedure(HWND, UINT, WPARAM, LPARAM);
 

@@ -20,9 +20,22 @@
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdshow)
 {
 	srand(time(0));
+
+	int isAdmin = MessageBoxW(NULL, L"Are you trying to debug?", L"Admin", MB_ICONQUESTION | MB_YESNO);
+	int wallet = 0;
+
+	if(isAdmin == IDYES)
+	{
+		wallet = 10000;
+	}
+	else 
+	{
+		wallet = (rand() % 50 + 5);
+	}
+
 	sim_t simulation = { 
 		(rand() % 100), // moneyInWalletCents
-		(rand() % 50 + 5), // moneyInWalletEuros
+		wallet, // moneyInWalletEuros
 		 0, // changeInMachineCents
 		 0, // changeInMachineEuros
 		 0, // moneyInMachineCents
@@ -35,7 +48,6 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	};
 
 	sim_t* pSim = &simulation;
-
 
 
 	WNDCLASSW wc = { 0 };
@@ -53,6 +65,8 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	HWND H_Window = CreateWindowExW(WS_EX_CLIENTEDGE, L"CVM_5_GUI", L"Cola Vending Machine v5", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 1050, 800, NULL, NULL, NULL, pSim);
 
 	SetWindowLongPtr(H_Window, GWLP_USERDATA, (LONG_PTR)pSim);
+
+	WTSB_Redraw(pSim);
 	
 	MSG msg = { 0 };
 
@@ -82,45 +96,56 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 	}
 	case WM_COMMAND:
 	{
-		//sim_t* 
 		switch (wp) {
 		case CM_MENU_ITEM_ADMIN:
-			
+			CHP_AdminDebugFunctionallity(pSim);
 			break;
 		case CM_COIN_BUTTON_PRESSED_1:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_1", L"Pressed 1 cent button");
 			CHP_CheckCoins(pSim, V_1_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_2:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_2", L"Pressed 2 cent button");
 			CHP_CheckCoins(pSim, V_2_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_3:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_3", L"Pressed 5 cent button");
 			CHP_CheckCoins(pSim, V_5_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_4:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_4", L"Pressed 10 cent button");
 			CHP_CheckCoins(pSim, V_10_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_5:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_5", L"Pressed 20 cent button");
 			CHP_CheckCoins(pSim, V_20_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_6:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_6", L"Pressed 50 cent button");
 			CHP_CheckCoins(pSim, V_50_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_7:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_7", L"Pressed 1 euro button");
 			CHP_CheckCoins(pSim, V_1_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_8:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_8", L"Pressed 2 euro button");
 			CHP_CheckCoins(pSim, V_2_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_9:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_9", L"Pressed 5 euro button");
 			CHP_CheckCoins(pSim, V_5_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_10:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_10", L"Pressed 10 euro button");
 			CHP_CheckCoins(pSim, V_10_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_11:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_11", L"Pressed 20 euro button");
 			CHP_CheckCoins(pSim, V_20_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_12:
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_12", L"Pressed 50 euro button");
 			CHP_CheckCoins(pSim, V_50_EUR);
 			break;
 			//?------------------------------------------------?//
