@@ -101,114 +101,134 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 			CHP_AdminDebugFunctionallity(pSim);
 			break;
 		case CM_COIN_BUTTON_PRESSED_1:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_1", L"Pressed 1 cent button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_1", L"Attempt to insert 1 cent");
 			CHP_CheckCoins(pSim, V_1_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_2:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_2", L"Pressed 2 cent button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_2", L"Attempt to insert 2 cent");
 			CHP_CheckCoins(pSim, V_2_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_3:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_3", L"Pressed 5 cent button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_3", L"Attempt to insert 5 cent");
 			CHP_CheckCoins(pSim, V_5_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_4:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_4", L"Pressed 10 cent button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_4", L"Attempt to insert 10 cent");
 			CHP_CheckCoins(pSim, V_10_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_5:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_5", L"Pressed 20 cent button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_5", L"Attempt to insert 20 cent");
 			CHP_CheckCoins(pSim, V_20_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_6:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_6", L"Pressed 50 cent button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_6", L"Attempt to insert 50 cent");
 			CHP_CheckCoins(pSim, V_50_CENTS);
 			break;
 		case CM_COIN_BUTTON_PRESSED_7:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_7", L"Pressed 1 euro button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_7", L"Attempt to insert 1 euro");
 			CHP_CheckCoins(pSim, V_1_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_8:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_8", L"Pressed 2 euro button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_8", L"Attempt to insert 2 euro");
 			CHP_CheckCoins(pSim, V_2_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_9:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_9", L"Pressed 5 euro button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_9", L"Attempt to insert 5 euro");
 			CHP_CheckCoins(pSim, V_5_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_10:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_10", L"Pressed 10 euro button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_10", L"Attempt to insert 10 euro");
 			CHP_CheckCoins(pSim, V_10_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_11:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_11", L"Pressed 20 euro button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_11", L"Attempt to insert 20 euro");
 			CHP_CheckCoins(pSim, V_20_EUR);
 			break;
 		case CM_COIN_BUTTON_PRESSED_12:
-			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_12", L"Pressed 50 euro button");
+			ATDB_Write(L"CM_COIN_BUTTON_PRESSED_12", L"Attempt to insert 50 euro");
 			CHP_CheckCoins(pSim, V_50_EUR);
 			break;
 			//?------------------------------------------------?//
 		case CM_DRINK_BUTTON_PRESSED_1:
+			ATDB_Write(L"CM_DRINK_BUTTON_PRESSED_1", L"Attempt to buy Cola");
 			CHP_CheckIfEnough(pSim, D_COLA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_2:
+			ATDB_Write(L"CM_DRINK_BUTTON_PRESSED_2", L"Attempt to buy Pepsi");
 			CHP_CheckIfEnough(pSim, D_PEPSI, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_3:
+			ATDB_Write(L"CM_DRINK_BUTTON_PRESSED_3", L"Attempt to buy Fanta");
 			CHP_CheckIfEnough(pSim, D_FANTA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_4:
+			ATDB_Write(L"CM_DRINK_BUTTON_PRESSED_4", L"Attempt to buy Ice Tea");
 			CHP_CheckIfEnough(pSim, D_ICE_TEA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_5:
+			ATDB_Write(L"CM_DRINK_BUTTON_PRESSED_5", L"Attempt to buy Sprite");
 			CHP_CheckIfEnough(pSim, D_SPRITE, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_6:
+			ATDB_Write(L"CM_DRINK_BUTTON_PRESSED_6", L"Attempt to buy SPA");
 			CHP_CheckIfEnough(pSim, D_SPA, H_Window);
 			break;
 			//?------------------------------------------------?//
 		case CM_CHANGE_BUTTON_PRESSED:
+			ATDB_Write(L"CM_CHANGE_BUTTON_PRESSED", L"Prompting change menu");
 			CHP_ChangeHandeling(pSim);
 			break;
 			//?------------------------------------------------?//
 		case CM_DEBITCARD_BUTTON_PRESSED:
+			ATDB_Write(L"CM_DEBITCARD_BUTTON_PRESSED", L"Insert debitcard");
 			PWDC_EnterAndRemoveDebitCard(pSim);
 			break;
 		case CM_PIN_BUTTON_PRESSED_1:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_1", L"Enter digit of pin | 1 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 1);
 			break;
 		case CM_PIN_BUTTON_PRESSED_2:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_2", L"Enter digit of pin | 2 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 2);
 			break;
 		case CM_PIN_BUTTON_PRESSED_3:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_3", L"Enter digit of pin | 3 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 3);
 			break;
 		case CM_PIN_BUTTON_PRESSED_4:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_4", L"Enter digit of pin | 4 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 4);
 			break;
 		case CM_PIN_BUTTON_PRESSED_5:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_5", L"Enter digit of pin | 5 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 5);
 			break;
 		case CM_PIN_BUTTON_PRESSED_6:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_6", L"Enter digit of pin | 6 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 6);
 			break;
 		case CM_PIN_BUTTON_PRESSED_7:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_7", L"Enter digit of pin | 7 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 7);
 			break;
 		case CM_PIN_BUTTON_PRESSED_8:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_8", L"Enter digit of pin | 8 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 8);
 			break;
 		case CM_PIN_BUTTON_PRESSED_9:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_9", L"Enter digit of pin | 9 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 9);
 			break;
 		case CM_PIN_BUTTON_PRESSED_0:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_0", L"Enter digit of pin | 0 |");
 			PWDC_AddToDebitCardCodeBuffer(pSim, 0);
 			break;
 		case CM_PIN_BUTTON_PRESSED_OK:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_OK", L"Validating pin");
 			PWDC_CheckDebitCardCode(pSim);
 			break;
 		case CM_PIN_BUTTON_PRESSED_DEL:
+			ATDB_Write(L"CM_PIN_BUTTON_PRESSED_1", L"Remove pin digit from buffer");
 			PWDC_RemoveFromDebitCardCodeBuffer(pSim, 0);
 			break;
 		}

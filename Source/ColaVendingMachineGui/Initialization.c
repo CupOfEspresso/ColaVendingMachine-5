@@ -53,7 +53,7 @@ int INIT_Static(HWND H_Window, sim_t* pSim)
 	CreateWindowW(L"static", L"Coins",  WS_CHILD | WS_VISIBLE | SS_CENTER, 800, 640, 100, 18, H_Window, NULL, NULL, NULL);
 
 	/// Static for "Debug" text
-	CreateWindowW(L"static", L"Debug",  WS_CHILD | WS_VISIBLE | SS_CENTER, 480, 2, 550, 18,   H_Window, NULL, NULL, NULL);
+	CreateWindowW(L"static", L"Debug",  WS_CHILD | WS_VISIBLE | SS_CENTER | ES_AUTOVSCROLL, 480, 2, 550, 18,   H_Window, NULL, NULL, NULL);
 
 	/// Static for "Cash" text and statics as buffers
 	CreateWindowW(L"static", L"Cash",   WS_CHILD | WS_VISIBLE | SS_CENTER, 30, 630, 100, 18,  H_Window, NULL, NULL, NULL);
@@ -87,7 +87,8 @@ int INIT_Menu(HWND H_Window)
 int INIT_Edit(HWND H_Window)
 {
 	/// Edit for the debug messsages
-	H_Change_Debug = CreateWindowW(L"edit", NULL, WS_CHILD | ES_MULTILINE | ES_WANTRETURN |WS_VISIBLE | WS_BORDER | SS_LEFT | ES_READONLY, 480, 20, 550, 525, H_Window, NULL, NULL, NULL);
-
+	H_Change_Debug = CreateWindowW(L"edit", NULL, WS_CHILD | ES_MULTILINE | ES_WANTRETURN | WS_VISIBLE | WS_BORDER | SS_LEFT | ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | SB_RIGHT, 480, 20, 550, 525, H_Window, NULL, NULL, NULL);
+	EnableScrollBar(H_Change_Debug, SB_VERT, ESB_ENABLE_BOTH);
+	ShowScrollBar(H_Change_Debug, SB_VERT, TRUE);
 	return 0;
 }
