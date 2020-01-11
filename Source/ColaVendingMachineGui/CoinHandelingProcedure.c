@@ -35,10 +35,13 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 			pSim->moneyInMachineCents = 0;
 
 			WTSB_Redraw(pSim);
+		
+            wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+		    ATDB_Display(bufferEdited);
+            
+			//wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
 
-			wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
-
-			MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
+			//MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
 		}
 		else
 		{
@@ -47,8 +50,9 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 
 			wsprintf(bufferEdited, L"Sorry, your %s is \u20ac%d,%d you have only inserted \u20ac%d,%d",
 				drinks.drinkName, drinks.priceInEuros, drinks.priceInCents, pSim->moneyInMachineEuros, pSim->moneyInMachineCents);
-
-			MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
+            
+		    ATDB_Display(bufferEdited);
+		//	MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
 		}
 	}
 	else if (pSim->hasPaid == 1)
@@ -58,9 +62,11 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 		CHP_CentsToEuros(pSim);
 
 		WTSB_Redraw(pSim);
+        wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+	    ATDB_Display(bufferEdited);
 
-		wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
-		MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
+		//wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+		//MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
 
 		pSim->hasPaid = 0;
 	}
