@@ -4,6 +4,8 @@
 typedef struct sim_t{
 	int moneyInWalletCents;
 	int moneyInWalletEuros;
+	int moneyInAccountCents;
+	int moneyInAccountEuros;
 	int changeInMachineCents;
 	int changeInMachineEuros;
 	int moneyInMachineCents;
@@ -19,7 +21,7 @@ typedef struct sim_t{
 #include "CoinHandelingProcedure.h"
 #include "UserDrinkSelection.h"
 #include "WriteToScreenBuffer.h"
-#include "AppendToDebugBuffer.h"
+#include "AppendToDisplayBuffers.h"
 
 
 int INIT_Button(HWND);

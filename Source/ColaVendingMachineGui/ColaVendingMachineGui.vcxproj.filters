@@ -33,7 +33,7 @@
     <ClCompile Include="PayWithDebitCard.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AppendToDebugBuffer.c">
+    <ClCompile Include="AppendToDisplayBuffers.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,10 +56,10 @@
     <ClInclude Include="PayWithDebitCard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AppendToDebugBuffer.h">
+    <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="AppendToDisplayBuffers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

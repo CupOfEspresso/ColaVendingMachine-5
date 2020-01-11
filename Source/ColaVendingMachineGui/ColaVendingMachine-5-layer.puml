@@ -16,6 +16,8 @@ package "Subsystems Layer" {
     [PayWithDebitCard]
     [UserDrinkSelection]
     [WriteToScreenbuffer]
+    [Initialization]
+    [AppendToDisplayBuffers]
 }
 
 package "Hardware Abstraction Layer" {
@@ -29,11 +31,14 @@ package "Hardware Abstraction Layer" {
 [Windowprocedure] -down-> [PayWithDebitCard]
 [Windowprocedure] -down-> [UserDrinkSelection]
 [Windowprocedure] -down-> [WriteToScreenbuffer]
+[Windowprocedure] -down-> [Initialization]
+[Windowprocedure] -down-> [AppendToDisplayBuffers]
 
 [CoinHandelingProcedure] -down-> [Hardware IO]
 [PayWithDebitCard] -down-> [Hardware IO]
 [UserDrinkSelection] -down-> [Hardware IO]
 [WriteToScreenbuffer] -down-> [Hardware IO]
-
+[Initialization] -down-> [Hardware IO]
+[AppendToDisplayBuffers] -down-> [Hardware IO]
 
 @enduml

@@ -13,8 +13,8 @@
 #include "UserDrinkSelection.h"
 #include "WriteToScreenBuffer.h"
 #include "PayWithDebitCard.h"
-#include "AppendToDebugBuffer.h"
-
+#include "AppendToDisplayBuffers.h"
+#include "resource.h"
 
 LRESULT CALLBACK WindowProcedure(HWND, UINT, WPARAM, LPARAM);
 
@@ -25,7 +25,7 @@ enum {
     CM_MENU_ITEM_ADMIN,
     CM_COIN_BUTTON_PRESSED_1, CM_PIN_BUTTON_PRESSED_0, CM_DRINK_BUTTON_PRESSED_1, CM_CHANGE_BUTTON_PRESSED,
     CM_COIN_BUTTON_PRESSED_2, CM_PIN_BUTTON_PRESSED_1, CM_DRINK_BUTTON_PRESSED_2, CM_DEBITCARD_BUTTON_PRESSED,
-    CM_COIN_BUTTON_PRESSED_3, CM_PIN_BUTTON_PRESSED_2, CM_DRINK_BUTTON_PRESSED_3,
+    CM_COIN_BUTTON_PRESSED_3, CM_PIN_BUTTON_PRESSED_2, CM_DRINK_BUTTON_PRESSED_3, CM_MENU_ITEM_AUTHOR,
     CM_COIN_BUTTON_PRESSED_4, CM_PIN_BUTTON_PRESSED_3, CM_DRINK_BUTTON_PRESSED_4,
     CM_COIN_BUTTON_PRESSED_5, CM_PIN_BUTTON_PRESSED_4, CM_DRINK_BUTTON_PRESSED_5,
     CM_COIN_BUTTON_PRESSED_6, CM_PIN_BUTTON_PRESSED_5, CM_DRINK_BUTTON_PRESSED_6,
@@ -49,14 +49,17 @@ enum {
 //?-------------------------------------WINDOWS HANDLERS--------------------------------------?//
 HMENU H_MENU;
 
-HWND H_Change_Cash_Euros, H_Change_Cash_Cents, H_Change_Change_Euros, H_Change_Change_Cents, H_Change_Wallet_Euros, H_Change_Wallet_Cents,
-H_Cola_Image, H_Change_Debug, H_DebitCard;
-
+HWND H_Change_Cash_Euros, H_Change_Cash_Cents, H_Change_Change_Euros, H_Change_Change_Cents,
+H_Change_Wallet_Euros, H_Change_Wallet_Cents, H_Change_Account_Euros, H_Change_Account_Cents,
+H_Cola_Image, H_Change_Debug, H_DebitCard, H_Change_Display;
+ 
 HBITMAP HBIT_Cola;
 
 HDC hdcStatic;
 
 PAINTSTRUCT ps;
+
+//HFONT hFont;
 
 static HBRUSH hb;
 //?-------------------------------------------------------------------------------------------?//

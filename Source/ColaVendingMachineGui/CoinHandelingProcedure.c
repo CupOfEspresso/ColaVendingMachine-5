@@ -7,8 +7,8 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 	    wchar_t bufferEdited[BUFFSIZE] = { 0 };
 		drink_t drinks = { L"ERROR", 0, 0 };
 		drink_t* pDrink = &drinks;
-		
 		UDS_Setup(whichDrink, &drinks);
+
 	if (pSim->hasPaid == 0)
 	{	
 		CHP_EurosToCentsInMachine(pSim);
@@ -53,6 +53,12 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 	}
 	else if (pSim->hasPaid == 1)
 	{
+		CHP_EurosToCents(pSim);
+		pSim->moneyInAccountCents -= drinks.priceTotaalCents;
+		CHP_CentsToEuros(pSim);
+
+		WTSB_Redraw(pSim);
+
 		wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
 		MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
 
@@ -68,21 +74,21 @@ void CHP_CheckCoins(sim_t* pSim, int coinSize)
 	   (pSim->moneyInWalletEuros > 0 && pSim->moneyInWalletCents >= 0))
 	{
 		if (coinSize >= 100) {
-			ATDB_Write(L"CHP_CheckCoins", L"Inserted is a euro value");
+			ATDB_Debug(L"CHP_CheckCoins", L"Inserted is a euro value");
 			CHP_CalculatorEuros(pSim, coinSize);
 		}
 		else
 		{
-			ATDB_Write(L"CHP_CheckCoins", L"Inserted is a cent value");
+			ATDB_Debug(L"CHP_CheckCoins", L"Inserted is a cent value");
 			CHP_CalculatorCents(pSim, coinSize);
 		}
-		ATDB_Write(L"CHP_CheckCoins", L"Screenbuffer is changed");
+		ATDB_Debug(L"CHP_CheckCoins", L"Screenbuffer is changed");
 		WTSB_Redraw(pSim);
 	}
 	else
 	{
-		ATDB_Write(L"CHP_CheckCoins", L"No money in wallet");
-		MessageBoxW(NULL, L"Wow, big spender you have spended all you money", L"Bankroot", MB_ICONWARNING);
+		ATDB_Debug(L"CHP_CheckCoins", L"No money left in wallet");
+		ATDB_Display(L"The object you inserted isn't a valid valuta\r\n---\r\n404 Not Found");
 	}
 }
 
@@ -99,6 +105,12 @@ void CHP_EurosToCents(sim_t* pSim)
 		pSim->moneyInWalletEuros--;
 		pSim->moneyInWalletCents += 100;
  	}
+
+	while (pSim->moneyInAccountEuros != 0)
+	{
+		pSim->moneyInAccountEuros--;
+		pSim->moneyInAccountCents += 100;
+	}
 
 }
 
@@ -123,6 +135,12 @@ void CHP_CentsToEuros(sim_t* pSim)
 	{
 		pSim->moneyInWalletEuros++;
 		pSim->moneyInWalletCents -= 100;
+	}
+
+	while (pSim->moneyInAccountCents >= 100)
+	{
+		pSim->moneyInAccountEuros++;
+		pSim->moneyInAccountCents -= 100;
 	}
 }
 
@@ -156,12 +174,12 @@ void CHP_CalculatorEuros(sim_t* pSim, int coinSize)
 			pSim->moneyInMachineEuros++;
 			coinSize -= 100;
 		}
-		ATDB_Write(L"CHP_CalculatorEuros", L"Changing euros value");
+		ATDB_Debug(L"CHP_CalculatorEuros", L"Changing euros value");
 		WTSB_Redraw(pSim);
 	}
 	else
 	{
-		ATDB_Write(L"CHP_CalculatorEuros", L"You don't got that many euros");
+		ATDB_Debug(L"CHP_CalculatorEuros", L"You don't got that many euros");
 		CHP_CentsToEuros(pSim);
 		MessageBoxW(NULL, L"You have't got that much money on hand", L"ERROR", MB_ICONWARNING);		
 	}
@@ -179,14 +197,20 @@ void CHP_CalculatorCents(sim_t* pSim, int coinSize)
 			pSim->moneyInMachineCents -= 100;
 		}
 	}
-	else if ((pSim->moneyInWalletCents - coinSize <= 0) && (pSim->moneyInWalletEuros >= 0) || (pSim->moneyInWalletEuros == 0))
+	else if ((pSim->moneyInWalletCents - coinSize >= 0) && (pSim->moneyInWalletEuros >= 0))
 	{
 		CHP_EurosToCents(pSim);
 		pSim->moneyInMachineCents += coinSize;
 		pSim->moneyInWalletCents -= coinSize;
 		CHP_CentsToEuros(pSim);
+		ATDB_Debug(L"CHP_CalculatorEuros", L"Changing euros value");
 	}
-	ATDB_Write(L"CHP_CalculatorEuros", L"Changing euros value");
+	else
+	{
+		ATDB_Debug(L"CHP_CalculatorEuros", L"You don't got that much money ");
+		CHP_CentsToEuros(pSim);
+		MessageBoxW(NULL, L"You have't got that much money on hand", L"ERROR", MB_ICONWARNING);
+	}
 	WTSB_Redraw(pSim);
 }
 

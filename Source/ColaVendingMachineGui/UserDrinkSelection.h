@@ -7,7 +7,7 @@
 #include "Initialization.h"
 #include "CoinHandelingProcedure.h"
 #include "WriteToScreenBuffer.h"
-#include "AppendToDebugBuffer.h"
+#include "AppendToDisplayBuffers.h"
 
 
 typedef struct {

@@ -5,7 +5,7 @@
 #include "Initialization.h"
 #include "UserDrinkSelection.h"
 #include "WriteToScreenBuffer.h"
-#include "AppendToDebugBuffer.h"
+#include "AppendToDisplayBuffers.h"
 
 
 void CHP_CheckIfEnough(sim_t* pSim, int, HWND);

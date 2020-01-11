@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AppendToDebugBuffer.c" />
+    <ClCompile Include="AppendToDisplayBuffers.c" />
     <ClCompile Include="CoinHandelingProcedure.c" />
     <ClCompile Include="Initialization.c" />
     <ClCompile Include="main.c" />
@@ -148,7 +148,7 @@
     <ClCompile Include="WriteToScreenBuffer.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AppendToDebugBuffer.h" />
+    <ClInclude Include="AppendToDisplayBuffers.h" />
     <ClInclude Include="ColaVendingMachineGui.h" />
     <ClInclude Include="CoinHandelingProcedure.h" />
     <ClInclude Include="Initialization.h" />
