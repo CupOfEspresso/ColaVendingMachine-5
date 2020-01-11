@@ -1,18 +1,22 @@
-﻿  CoinHandelingProcedure.c
+﻿  WriteToDisplayBuffers.c
+  CoinHandelingProcedure.c
   Initialization.c
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\Initialization.c(103,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
   main.c
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\main.c(22,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\main.c(46,37): warning C4047: 'function': 'UINT' differs in levels of indirection from 'void *'
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\main.c(46,37): warning C4024: 'GetMessageW': different types for formal and actual parameter 3
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\main.c(46,43): warning C4047: 'function': 'UINT' differs in levels of indirection from 'void *'
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\main.c(46,43): warning C4024: 'GetMessageW': different types for formal and actual parameter 4
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\main.c(58,1): warning C4047: 'initializing': 'sim_t *' differs in levels of indirection from 'LONG_PTR'
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(23,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(57,38): warning C4047: 'function': 'LPCWSTR' differs in levels of indirection from 'int'
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(57,38): warning C4024: 'LoadIconW': different types for formal and actual parameter 2
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(73,37): warning C4047: 'function': 'UINT' differs in levels of indirection from 'void *'
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(73,37): warning C4024: 'GetMessageW': different types for formal and actual parameter 3
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(73,43): warning C4047: 'function': 'UINT' differs in levels of indirection from 'void *'
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(73,43): warning C4024: 'GetMessageW': different types for formal and actual parameter 4
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(26,1): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(118,32): warning C4013: 'CHP_AdminDebugFunctionallity' undefined; assuming extern returning int
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(198,23): warning C4013: 'CHP_ChangeHandeling' undefined; assuming extern returning int
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(251,36): warning C4020: 'PWDC_RemovePincodeBuffer': too many actual parameters
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(99,1): warning C4047: 'initializing': 'sim_t *' differs in levels of indirection from 'LONG_PTR'
+  PayWithDebitCard.c
   UserDrinkSelection.c
   WriteToScreenBuffer.c
-\\zd-000-co-st01\userdata10$\AL20741\Documents\AD Energietechniek\Inleiding Software Engineering SA\ColaVendingMachine_5_Gui\ColaVendingMachine-5\ColaVendingMachineGui\WriteToScreenBuffer.c(59,1): fatal error C1001: An internal error has occurred in the compiler.
-  (compiler file 'msc1.cpp', line 1528)
-   To work around this problem, try simplifying or changing the program near the locations listed above.
-  Please choose the Technical Support command on the Visual C++
-   Help menu, or open the Technical Support help file for more information
-  CTIPlugin::InvokeCallback=BEXCTIPlugin::InvokeCallback=BEXCTIPlugin::InvokeCallback=BEXCTIPlugin::InvokeCallback=BEXCTIPlugin::InvokeCallback=BEX
+  Generating Code...
+C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(278): warning C4715: 'WindowProcedure': not all control paths return a value
+  ColaVendingMachineGui.vcxproj -> C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\x64\Debug\ColaVendingMachineGui.exe
