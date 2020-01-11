@@ -4,260 +4,134 @@
 
 void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 {
-	    wchar_t bufferEdited[BUFFSIZE] = { 0 };
-		drink_t drinks = { L"ERROR", 0, 0 };
-		drink_t* pDrink = &drinks;
-		UDS_Setup(whichDrink, &drinks);
+	wchar_t bufferEdited[BUFFSIZE] = { 0 };
+	drink_t drinks = { L"ERROR", 0};
+	drink_t* pDrink = &drinks;
+	UDS_Setup(whichDrink, &drinks);
 
 	if (pSim->hasPaid == 0)
-	{	
-		CHP_EurosToCentsInMachine(pSim);
-
-		if (pSim->moneyInMachineCents >= drinks.priceTotaalCents)
+	{
+		if (pSim->moneyInMachine >= drinks.priceTotaalCents)
 		{
-			CHP_CentsToEurosInMachine(pSim);
-			pSim->moneyInMachineEuros -= drinks.priceInEuros;
-
-			if (pSim->moneyInMachineCents - drinks.priceInCents < 0)
-			{
-				pSim->moneyInMachineEuros--;
-				pSim->moneyInMachineCents += 100;
-				pSim->moneyInMachineCents -= drinks.priceInCents;
-			}
-			else
-			{
-				pSim->moneyInMachineCents -= drinks.priceInCents;
-			}
-
-			pSim->changeInMachineEuros = pSim->moneyInMachineEuros;
-			pSim->changeInMachineCents = pSim->moneyInMachineCents;
-			pSim->moneyInMachineEuros = 0;
-			pSim->moneyInMachineCents = 0;
+			WTDB_Debug(L"CHP_CheckIfEnough", L"Was sufficent amount pay for drink");
+			pSim->moneyInMachine -= drinks.priceTotaalCents;
+			pSim->changeInMachine = pSim->moneyInMachine;
+			pSim->moneyInMachine = 0;
 
 			WTSB_Redraw(pSim);
-		
-            wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
-		    ATDB_Display(bufferEdited);
-            
-			//wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
 
-			//MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
+			WTDB_Debug(L"CHP_CheckIfEnough", L"Drink dispensed");
+			wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+			WTDB_Display(bufferEdited);
+
 		}
 		else
 		{
-			CHP_CentsToEurosInMachine(pSim);
-			WTSB_Redraw(pSim);
-
-			wsprintf(bufferEdited, L"Sorry, your %s is \u20ac%d,%d you have only inserted \u20ac%d,%d",
-				drinks.drinkName, drinks.priceInEuros, drinks.priceInCents, pSim->moneyInMachineEuros, pSim->moneyInMachineCents);
-            
-		    ATDB_Display(bufferEdited);
-		//	MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
+			WTDB_Debug(L"CHP_CheckIfEnough", L"Wasn't sufficent amount pay for drink");
+			swprintf(bufferEdited, 128, L"Sorry, your %s is \u20ac%.2f you have only inserted \u20ac%.2f", drinks.drinkName, (double)drinks.priceTotaalCents / 100, (double)pSim->moneyInMachine / 100);
+			WTDB_Display(bufferEdited);
 		}
 	}
 	else if (pSim->hasPaid == 1)
 	{
-		CHP_EurosToCents(pSim);
-		pSim->moneyInAccountCents -= drinks.priceTotaalCents;
-		CHP_CentsToEuros(pSim);
+		WTDB_Debug(L"CHP_CheckIfEnough", L"Debit transaction came through");
+		WTDB_Debug(L"CHP_CheckIfEnough", L"Payment complete"); 
+		pSim->moneyInAccount -= drinks.priceTotaalCents;
 
 		WTSB_Redraw(pSim);
-        wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
-	    ATDB_Display(bufferEdited);
 
-		//wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
-		//MessageBox(H_Window, bufferEdited, L"DISPENSE", MB_OK);
+		WTDB_Debug(L"CHP_CheckIfEnough", L"Drink dispensed");
+		wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+		WTDB_Display(bufferEdited);
 
 		pSim->hasPaid = 0;
 	}
 }
 
-void CHP_CheckCoins(sim_t* pSim, int coinSize)
+void CHP_CheckCoins(sim_t* pSim, int money)
 {
+	wchar_t bufferEdited[BUFFSIZE] = { 0 };
 	/// This function Calculates the right values for each money related screen buffer
-	if ((pSim->moneyInWalletEuros > 0 && pSim->moneyInWalletCents > 0) ||
-	   (pSim->moneyInWalletEuros >= 0 && pSim->moneyInWalletCents > 0) ||
-	   (pSim->moneyInWalletEuros > 0 && pSim->moneyInWalletCents >= 0))
+	
+	
+	if (pSim->moneyInWallet - money >= 0)
 	{
-		if (coinSize >= 100) {
-			ATDB_Debug(L"CHP_CheckCoins", L"Inserted is a euro value");
-			CHP_CalculatorEuros(pSim, coinSize);
-		}
-		else
-		{
-			ATDB_Debug(L"CHP_CheckCoins", L"Inserted is a cent value");
-			CHP_CalculatorCents(pSim, coinSize);
-		}
-		ATDB_Debug(L"CHP_CheckCoins", L"Screenbuffer is changed");
+		CHP_CalculateValueOfCoin(pSim, money);
+		WTDB_Debug(L"CHP_CheckCoins", L"Screenbuffer is changed");
+
+		swprintf(bufferEdited, 128, L"Inserted \u20AC%.2f currently in th machine is \u20AC%.2f", (double)money / 100, (double)pSim->moneyInMachine / 100);
+		WTDB_Display(bufferEdited);
 		WTSB_Redraw(pSim);
 	}
 	else
 	{
-		ATDB_Debug(L"CHP_CheckCoins", L"No money left in wallet");
-		ATDB_Display(L"The object you inserted isn't a valid valuta\r\n---\r\n404 Not Found");
+		WTDB_Debug(L"CHP_CheckCoins", L"No money left in wallet");
+		WTDB_Display(L"The object you inserted isn't a valid valuta\r\n---\r\n404 Not Found");
 	}
 }
 
-void CHP_EurosToCents(sim_t* pSim)
+
+
+void CHP_CalculateValueOfCoin(sim_t* pSim, int money)
 {
-	while (pSim->moneyInMachineEuros != 0)
+	wchar_t buffer[BUFFSIZE] = { 0 };
+	if (pSim->moneyInWallet - money >= 0)
 	{
-		pSim->moneyInMachineEuros--;
-		pSim->moneyInMachineCents += 100;
-	}
-
-	while (pSim->moneyInWalletEuros != 0)
-	{
-		pSim->moneyInWalletEuros--;
-		pSim->moneyInWalletCents += 100;
- 	}
-
-	while (pSim->moneyInAccountEuros != 0)
-	{
-		pSim->moneyInAccountEuros--;
-		pSim->moneyInAccountCents += 100;
-	}
-
-}
-
-void CHP_EurosToCentsInMachine(sim_t* pSim)
-{
-	while (pSim->moneyInMachineEuros != 0)
-	{
-		pSim->moneyInMachineEuros--;
-		pSim->moneyInMachineCents += 100;
-	}
-}
-
-void CHP_CentsToEuros(sim_t* pSim)
-{
-	while (pSim->moneyInMachineCents >= 100)
-	{
-		pSim->moneyInMachineEuros++;
-		pSim->moneyInMachineCents -= 100;
-	}
-
-	while (pSim->moneyInWalletCents >= 100)
-	{
-		pSim->moneyInWalletEuros++;
-		pSim->moneyInWalletCents -= 100;
-	}
-
-	while (pSim->moneyInAccountCents >= 100)
-	{
-		pSim->moneyInAccountEuros++;
-		pSim->moneyInAccountCents -= 100;
-	}
-}
-
-void CHP_CentsToEurosInMachine(sim_t* pSim)
-{
-	while (pSim->moneyInMachineCents >= 100)
-	{
-		pSim->moneyInMachineEuros++;
-		pSim->moneyInMachineCents -= 100;
-	}
-}
-
-void CHP_CalculatorEuros(sim_t* pSim, int coinSize)
-{
-	CHP_EurosToCents(pSim);
-
-	if (pSim->moneyInWalletCents - coinSize >= 0)
-	{
-		CHP_CentsToEuros(pSim);
-		while (coinSize >= 100)
-		{
-			pSim->moneyInMachineEuros++;
-			pSim->moneyInWalletEuros--;
-			coinSize -= 100;
-		}
-
-		pSim->moneyInMachineCents += coinSize;
-
-		if (pSim->moneyInMachineCents > 100)
-		{
-			pSim->moneyInMachineEuros++;
-			coinSize -= 100;
-		}
-		ATDB_Debug(L"CHP_CalculatorEuros", L"Changing euros value");
+		swprintf(buffer, BUFFSIZE, L"Adding \u20AC%.2f to internal account", (double)money / 100);
+		WTDB_Debug(L"CHP_CalculateValueOfCoin", buffer);
+		pSim->moneyInWallet -= money;
+		pSim->moneyInMachine += money;
 		WTSB_Redraw(pSim);
 	}
 	else
 	{
-		ATDB_Debug(L"CHP_CalculatorEuros", L"You don't got that many euros");
-		CHP_CentsToEuros(pSim);
-		MessageBoxW(NULL, L"You have't got that much money on hand", L"ERROR", MB_ICONWARNING);		
+		WTDB_Debug(L"CHP_CalculateValueOfCoin", L"Invalid money registered");
+		WTDB_Display(L"The object you inserted isn't a valid valuta\r\n---\r\n404 Not Found");
+		WTSB_Redraw(pSim);
 	}
-}
-
-void CHP_CalculatorCents(sim_t* pSim, int coinSize)
-{
-	if (pSim->moneyInWalletCents - coinSize >= 0)
-	{
-		pSim->moneyInMachineCents += coinSize;
-		pSim->moneyInWalletCents -= coinSize;
-		if (pSim->moneyInMachineCents >= 100)
-		{
-			pSim->moneyInMachineEuros++;
-			pSim->moneyInMachineCents -= 100;
-		}
-	}
-	else if ((pSim->moneyInWalletCents - coinSize >= 0) && (pSim->moneyInWalletEuros >= 0))
-	{
-		CHP_EurosToCents(pSim);
-		pSim->moneyInMachineCents += coinSize;
-		pSim->moneyInWalletCents -= coinSize;
-		CHP_CentsToEuros(pSim);
-		ATDB_Debug(L"CHP_CalculatorEuros", L"Changing euros value");
-	}
-	else
-	{
-		ATDB_Debug(L"CHP_CalculatorEuros", L"You don't got that much money ");
-		CHP_CentsToEuros(pSim);
-		MessageBoxW(NULL, L"You have't got that much money on hand", L"ERROR", MB_ICONWARNING);
-	}
-	WTSB_Redraw(pSim);
 }
 
 void CHP_ChangeHandeling(sim_t* pSim)
 {
 	wchar_t bufferEdited[BUFFSIZE];
 
-	if ((pSim->changeInMachineEuros != 0) || (pSim->changeInMachineCents != 0))
+	if ((pSim->changeInMachine != 0))
 	{
-		wsprintf(bufferEdited, L"Do you want to donate your \u20ac%d,%d change to a charity?", pSim->changeInMachineEuros, pSim->changeInMachineCents);
+		swprintf(bufferEdited, BUFFSIZE, L"Do you want to donate your \u20ac%.2f change to a charity?", (double)pSim->changeInMachine / 100);
 		int messageBoxInput = MessageBoxW(NULL, bufferEdited, L"Change for Charity", MB_YESNO);
 
 		if (messageBoxInput == IDYES)
 		{
-			pSim->changeInMachineEuros;
-			pSim->changeInMachineCents;
-			MessageBoxW(NULL, L"Thank you for your donation", L"Change for Charity", MB_OK);
-			pSim->changeInMachineEuros = 0;
-			pSim->changeInMachineCents = 0;
+			WTDB_Debug(L"CHP_ChangeHandeling", L"donating authorized by users");
+			WTDB_Debug(L"CHP_ChangeHandeling", L"donate complete");
+			pSim->changeInMachine;
+			WTDB_Display(L"Thank you for your donation");
+			pSim->changeInMachine = 0;
 			WTSB_Redraw(pSim);
 		}
 		else
 		{
-			pSim->moneyInWalletEuros += pSim->changeInMachineEuros;
-			pSim->moneyInWalletCents += pSim->changeInMachineCents;
-			pSim->changeInMachineEuros = 0;
-			pSim->changeInMachineCents = 0;
+			WTDB_Debug(L"CHP_ChangeHandeling", L"donating denied by users");
+			WTDB_Debug(L"CHP_ChangeHandeling", L"change dispensed");
+			pSim->moneyInWallet += pSim->changeInMachine;
+			pSim->changeInMachine = 0;
 			WTSB_Redraw(pSim);
 		}
 	}
 	else
 	{
+		WTDB_Debug(L"CHP_ChangeHandeling", L"There is no change");
 		MessageBoxW(NULL, L"There is no change", L"Change", MB_OK);
 	}
 }
 
 void CHP_AdminDebugFunctionallity(sim_t* pSim)
 {
-	pSim->moneyInWalletEuros = 10000;
+	pSim->moneyInWallet = 1000000;
+	pSim->moneyInAccount = 1000000;
 
-	MessageBoxW(NULL, L"You chose admin this earns you \u20ac10000", L"admin", MB_OK);
+	WTDB_Debug(L"CHP_AdminDebugFunctionallity", L"Token authorized, gaining debug money");
+	WTDB_Display(L"DEBUG - Admin mode initiated\r\nEarning \u20ac1000000 debug money");
 
 	WTSB_Redraw(pSim);
 }

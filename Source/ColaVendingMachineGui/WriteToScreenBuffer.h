@@ -7,16 +7,12 @@
 #include "Initialization.h"
 #include "CoinHandelingProcedure.h"
 #include "UserDrinkSelection.h"
-#include "AppendToDisplayBuffers.h"
+#include "WriteToDisplayBuffers.h"
 
-
-//void WTSB_StaticChar(wchar_t buffer, HWND handler);
-void WTSB_StaticCashCents(sim_t*);
-void WTSB_StaticCashEuros(sim_t*);
-void WTSB_StaticChangeCents(sim_t*);
-void WTSB_StaticChangeEuros(sim_t*);
-void WTSB_StaticWalletCents(sim_t*);
-void WTSB_StaticWalletEuros(sim_t*);
+void WTSB_StaticInMachine(sim_t*);
+void WTSB_StaticChange(sim_t*);
+void WTSB_StaticAccount(sim_t*);
+void WTSB_StaticWallet(sim_t*);
 void WTSB_Redraw(sim_t*);
 
 #endif // !WRITETOSCREENBUFFER_H

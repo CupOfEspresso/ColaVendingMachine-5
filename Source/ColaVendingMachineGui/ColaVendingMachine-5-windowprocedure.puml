@@ -9,9 +9,9 @@ Initialised : ~*pSim = &simulation
 Initialised : pSim->moneyInWalletCents = (rand() % 100)
 Initialised : pSim->moneyInWalletEuros = (rand() % 50 + 5) 
 Initialised : pSim->changeInMachineCents = 0 
-Initialised : pSim->changeInMachineEuros = 0
-Initialised : pSim->moneyInMachineCents = 0
-Initialised : pSim->moneyInMachineEuros = 0 
+Initialised : pSim->changeInMachine = 0
+Initialised : pSim->moneyInMachine = 0
+Initialised : pSim->moneyInMachine = 0 
 Initialised : pSim->isDebitCardEntered = 0
 Initialised : pSim->postionInCardCode = 0 
 Initialised : pSim->debitCardCode = {0, 0, 0, 0} 
@@ -25,8 +25,8 @@ Windowprocedure --> WM_DESTROY
 WM_DESTROY --> [*]
 
 WM_COMMAND --> CM_COIN_BUTTON_PRESSED : CHP_CheckCoins()
-CM_COIN_BUTTON_PRESSED : pSim->moneyInMachineEuros = appropriate value
-CM_COIN_BUTTON_PRESSED : pSim->moneyInMachineCents = appropriate value
+CM_COIN_BUTTON_PRESSED : pSim->moneyInMachine = appropriate value
+CM_COIN_BUTTON_PRESSED : pSim->moneyInMachine = appropriate value
 
 WM_COMMAND --> CM_DRINK_BUTTON_PRESSED : CHP_CheckIfEnough()
 CM_DRINK_BUTTON_PRESSED --> UserDrinkSelection : If you could pay it / WTSB_Redraw()
@@ -38,20 +38,20 @@ CM_DRINK_BUTTON_PRESSED --> Windowprocedure : If you couldn't pay it
 WM_COMMAND --> CM_CHANGE_BUTTON_PRESSED : CHP_ChangeHandeling
 CM_CHANGE_BUTTON_PRESSED --> Windowprocedure
 
-WM_COMMAND --> CM_DEBITCARD_BUTTON_PRESSED : PWDC_EnterAndRemoveDebitCard()
+WM_COMMAND --> CM_DEBITCARD_BUTTON_PRESSED : PWDC_DebitcardHandeling()
 CM_DEBITCARD_BUTTON_PRESSED --> Enter_debitcard : First time enters card
 CM_DEBITCARD_BUTTON_PRESSED --> Enter_debitcard : Second time takes card
 Enter_debitcard --> Windowprocedure
 
-WM_COMMAND --> CM_PIN_BUTTON_PRESSED : PWDC_AddToDebitCardCodeBuffer()
+WM_COMMAND --> CM_PIN_BUTTON_PRESSED : PWDC_AddPincodeBuffer()
 CM_PIN_BUTTON_PRESSED --> Store_In_Buffer
 Store_In_Buffer --> Windowprocedure
 
-WM_COMMAND --> CM_PIN_BUTTON_PRESSED_OK : PWDC_RemoveFromDebitCardCodeBuffer()
+WM_COMMAND --> CM_PIN_BUTTON_PRESSED_OK : PWDC_RemovePincodeBuffer()
 CM_PIN_BUTTON_PRESSED_OK --> Store_In_Buffer : Check storebuffer against database or in this case pSim->POINTOFCONCEPTPASSWORD
 Store_In_Buffer --> Windowprocedure
 
-WM_COMMAND --> CM_PIN_BUTTON_PRESSED_DEL : PWDC_CheckDebitCardCode()
+WM_COMMAND --> CM_PIN_BUTTON_PRESSED_DEL : PWDC_CheckPincode()
 CM_PIN_BUTTON_PRESSED_OK --> Store_In_Buffer : Remove one digit form store buffer
 Store_In_Buffer --> Windowprocedure
 

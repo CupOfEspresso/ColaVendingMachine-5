@@ -23,32 +23,27 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	srand(time(0));
 
 	//int isAdmin = MessageBoxW(NULL, L"Are you trying to debug?", L"Admin", MB_ICONQUESTION | MB_YESNO);
-	int wallet = 0, account = 0;
+	int change = 0.0;
 
-	if(0/*isAdmin == IDYES*/)
+	if ((rand() % 100) == 42)
 	{
-		//wallet = 10000;
+		change = (rand() % 500 + 1);
 	}
-	else 
+	else
 	{
-		wallet = (rand() % 50 + 5);
-		account = (rand() % 1000 + 5);
+		change = 0;
 	}
 
-	sim_t simulation = { 
-		(rand() % 100), // moneyInWalletCents
-		 wallet, // moneyInWalletEuros
-		(rand() % 100), // moneyInAccountCents;
-		 account, // moneyInAccountEuros;
-		 0, // changeInMachineCents
-		 0, // changeInMachineEuros
-		 0, // moneyInMachineCents
-		 0, // moneyInMachineEuros
-		 0, // isDebitCardEntered
-		 0, // postionInCardCode
-		{0, 0, 0, 0}, // debitCardCode
-		{1, 3, 3, 7}, //POINTOFCONCEPTPASSWORD
-		 0 //hasPaid
+	sim_t simulation = {
+	(rand() % 5000 + 500),
+	(rand() % 100000),
+	change,
+	0,
+	0,
+	0,
+	0, //hasPaid
+	{0, 0, 0, 0}, // debitCardCode
+	{1, 3, 3, 7} // POINTOFCONCEPTPASSWORD
 	};
 
 	sim_t* pSim = &simulation;
@@ -67,12 +62,12 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	if (!RegisterClassW(&wc))
 		return -1;
 
-	HWND H_Window = CreateWindowExW(WS_EX_CLIENTEDGE, L"CVM_5_GUI", L"Cola Vending Machine v5", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 1300, 1000, NULL, NULL, NULL, pSim);
+	HWND H_Window = CreateWindowExW(WS_EX_CLIENTEDGE, L"CVM_5_GUI", L"Cola Vending Machine v5", WS_OVERLAPPEDWINDOW | WS_VISIBLE, 100, 100, 1000, 600, NULL, NULL, NULL, pSim);
 
 	SetWindowLongPtr(H_Window, GWLP_USERDATA, (LONG_PTR)pSim);
 
 	WTSB_Redraw(pSim);
-	
+
 	MSG msg = { 0 };
 
 	while (GetMessageW(&msg, NULL, NULL, NULL))
@@ -86,16 +81,29 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 
 LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 {
-	//int Drink = 0;
+	valuta_t valuta = {
+	1,  //V_1_CENT
+	2,  //V_2_CENT
+	5,  //V_5_CENT
+	10,  //V_10_CENT
+	20,  //V_20_CENT
+	50,  //V_50_CENT
+	100,  //V_1_EURO
+	200,  //V_2_EURO
+	500,  //V_5_EURO
+	1000, //V_10_EURO
+	2000, //V_20_EURO
+	5000  //V_50_EURO
+	};
+
 	sim_t* pSim = GetWindowLongPtr(H_Window, GWLP_USERDATA);
+	valuta_t* pValuta = &valuta;
+
 
 	switch (msg) {
 
 	case WM_CREATE:
-	{ 
-		//HFONT hFont;
-		//hFont = CreateFont(30, 0, 0, 0, FW_EXTRALIGHT, FALSE, FALSE, FALSE, ANSI_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY, DEFAULT_PITCH | FF_DONTCARE, " Arial");
-		//SendMessage(H_Window, WM_SETFONT, (WPARAM)hFont, TRUE);
+	{
 		INIT_Button(H_Window);
 		INIT_Static(H_Window, pSim);
 		INIT_Menu(H_Window);
@@ -106,140 +114,141 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 	{
 		switch (wp) {
 		case CM_MENU_ITEM_ADMIN:
+			WTDB_Debug(L"ADMIN", L"Admin test money granted");
 			CHP_AdminDebugFunctionallity(pSim);
 			break;
 		case CM_MENU_ITEM_AUTHOR:
-			MessageBoxW(NULL, L"Author: Youri Claes\r\nVersion: 1.7", L"About CVM_GUI", MB_OK);
+			MessageBoxW(NULL, L"Author: Youri Claes\r\nVersion: 1.8", L"About CVM_GUI", MB_OK);
 		case CM_COIN_BUTTON_PRESSED_1:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_1", L"Attempt to insert 1 cent");
-			CHP_CheckCoins(pSim, V_1_CENTS);
+			WTDB_Debug(L"COIN_1", L"Attempt to insert 1 cent");
+			CHP_CheckCoins(pSim, pValuta->V_1_CENT);
 			break;
 		case CM_COIN_BUTTON_PRESSED_2:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_2", L"Attempt to insert 2 cent");
-			CHP_CheckCoins(pSim, V_2_CENTS);
+			WTDB_Debug(L"COIN_2", L"Attempt to insert 2 cent");
+			CHP_CheckCoins(pSim, valuta.V_2_CENT);
 			break;
 		case CM_COIN_BUTTON_PRESSED_3:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_3", L"Attempt to insert 5 cent");
-			CHP_CheckCoins(pSim, V_5_CENTS);
+			WTDB_Debug(L"COIN_3", L"Attempt to insert 5 cent");
+			CHP_CheckCoins(pSim, valuta.V_5_CENT);
 			break;
 		case CM_COIN_BUTTON_PRESSED_4:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_4", L"Attempt to insert 10 cent");
-			CHP_CheckCoins(pSim, V_10_CENTS);
+			WTDB_Debug(L"COIN_4", L"Attempt to insert 10 cent");
+			CHP_CheckCoins(pSim, valuta.V_10_CENT);
 			break;
 		case CM_COIN_BUTTON_PRESSED_5:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_5", L"Attempt to insert 20 cent");
-			CHP_CheckCoins(pSim, V_20_CENTS);
+			WTDB_Debug(L"COIN_5", L"Attempt to insert 20 cent");
+			CHP_CheckCoins(pSim, valuta.V_20_CENT);
 			break;
 		case CM_COIN_BUTTON_PRESSED_6:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_6", L"Attempt to insert 50 cent");
-			CHP_CheckCoins(pSim, V_50_CENTS);
+			WTDB_Debug(L"COIN_6", L"Attempt to insert 50 cent");
+			CHP_CheckCoins(pSim, valuta.V_50_CENT);
 			break;
 		case CM_COIN_BUTTON_PRESSED_7:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_7", L"Attempt to insert 1 euro");
-			CHP_CheckCoins(pSim, V_1_EUR);
+			WTDB_Debug(L"COIN_7", L"Attempt to insert 1 euro");
+			CHP_CheckCoins(pSim, valuta.V_1_EURO);
 			break;
 		case CM_COIN_BUTTON_PRESSED_8:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_8", L"Attempt to insert 2 euro");
-			CHP_CheckCoins(pSim, V_2_EUR);
+			WTDB_Debug(L"COIN_8", L"Attempt to insert 2 euro");
+			CHP_CheckCoins(pSim, valuta.V_2_EURO);
 			break;
 		case CM_COIN_BUTTON_PRESSED_9:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_9", L"Attempt to insert 5 euro");
-			CHP_CheckCoins(pSim, V_5_EUR);
+			WTDB_Debug(L"COIN_9", L"Attempt to insert 5 euro");
+			CHP_CheckCoins(pSim, valuta.V_5_EURO);
 			break;
 		case CM_COIN_BUTTON_PRESSED_10:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_10", L"Attempt to insert 10 euro");
-			CHP_CheckCoins(pSim, V_10_EUR);
+			WTDB_Debug(L"COIN_10", L"Attempt to insert 10 euro");
+			CHP_CheckCoins(pSim, valuta.V_10_EURO);
 			break;
 		case CM_COIN_BUTTON_PRESSED_11:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_11", L"Attempt to insert 20 euro");
-			CHP_CheckCoins(pSim, V_20_EUR);
+			WTDB_Debug(L"COIN_11", L"Attempt to insert 20 euro");
+			CHP_CheckCoins(pSim, valuta.V_20_EURO);
 			break;
 		case CM_COIN_BUTTON_PRESSED_12:
-			ATDB_Debug(L"CM_COIN_BUTTON_PRESSED_12", L"Attempt to insert 50 euro");
-			CHP_CheckCoins(pSim, V_50_EUR);
+			WTDB_Debug(L"COIN_12", L"Attempt to insert 50 euro");
+			CHP_CheckCoins(pSim, valuta.V_50_EURO);
 			break;
 			//?------------------------------------------------?//
 		case CM_DRINK_BUTTON_PRESSED_1:
-			ATDB_Debug(L"CM_DRINK_BUTTON_PRESSED_1", L"Attempt to buy Cola");
+			WTDB_Debug(L"DRINK_1", L"Attempt to buy Cola");
 			CHP_CheckIfEnough(pSim, D_COLA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_2:
-			ATDB_Debug(L"CM_DRINK_BUTTON_PRESSED_2", L"Attempt to buy Pepsi");
+			WTDB_Debug(L"DRINK_2", L"Attempt to buy Pepsi");
 			CHP_CheckIfEnough(pSim, D_PEPSI, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_3:
-			ATDB_Debug(L"CM_DRINK_BUTTON_PRESSED_3", L"Attempt to buy Fanta");
+			WTDB_Debug(L"DRINK_3", L"Attempt to buy Fanta");
 			CHP_CheckIfEnough(pSim, D_FANTA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_4:
-			ATDB_Debug(L"CM_DRINK_BUTTON_PRESSED_4", L"Attempt to buy Ice Tea");
+			WTDB_Debug(L"DRINK_4", L"Attempt to buy Ice Tea");
 			CHP_CheckIfEnough(pSim, D_ICE_TEA, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_5:
-			ATDB_Debug(L"CM_DRINK_BUTTON_PRESSED_5", L"Attempt to buy Sprite");
+			WTDB_Debug(L"DRINK_5", L"Attempt to buy Sprite");
 			CHP_CheckIfEnough(pSim, D_SPRITE, H_Window);
 			break;
 		case CM_DRINK_BUTTON_PRESSED_6:
-			ATDB_Debug(L"CM_DRINK_BUTTON_PRESSED_6", L"Attempt to buy SPA");
+			WTDB_Debug(L"DRINK_6", L"Attempt to buy SPA");
 			CHP_CheckIfEnough(pSim, D_SPA, H_Window);
 			break;
 			//?------------------------------------------------?//
 		case CM_CHANGE_BUTTON_PRESSED:
-			ATDB_Debug(L"CM_CHANGE_BUTTON_PRESSED", L"Prompting change menu");
+			WTDB_Debug(L"CHANGE", L"Prompting change menu");
 			CHP_ChangeHandeling(pSim);
 			break;
 			//?------------------------------------------------?//
 		case CM_DEBITCARD_BUTTON_PRESSED:
-			ATDB_Debug(L"CM_DEBITCARD_BUTTON_PRESSED", L"Insert debitcard");
-			PWDC_EnterAndRemoveDebitCard(pSim);
+			WTDB_Debug(L"DEBITCARD", L"Insert debitcard");
+			PWDC_DebitcardHandeling(pSim);
 			break;
 		case CM_PIN_BUTTON_PRESSED_1:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_1", L"Enter digit of pin | 1 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 1);
+			WTDB_Debug(L"PIN_1", L"Enter digit of pin | 1 |");
+			PWDC_AddPincodeBuffer(pSim, 1);
 			break;
 		case CM_PIN_BUTTON_PRESSED_2:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_2", L"Enter digit of pin | 2 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 2);
+			WTDB_Debug(L"PIN_2", L"Enter digit of pin | 2 |");
+			PWDC_AddPincodeBuffer(pSim, 2);
 			break;
 		case CM_PIN_BUTTON_PRESSED_3:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_3", L"Enter digit of pin | 3 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 3);
+			WTDB_Debug(L"PIN_3", L"Enter digit of pin | 3 |");
+			PWDC_AddPincodeBuffer(pSim, 3);
 			break;
 		case CM_PIN_BUTTON_PRESSED_4:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_4", L"Enter digit of pin | 4 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 4);
+			WTDB_Debug(L"PIN_4", L"Enter digit of pin | 4 |");
+			PWDC_AddPincodeBuffer(pSim, 4);
 			break;
 		case CM_PIN_BUTTON_PRESSED_5:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_5", L"Enter digit of pin | 5 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 5);
+			WTDB_Debug(L"PIN_5", L"Enter digit of pin | 5 |");
+			PWDC_AddPincodeBuffer(pSim, 5);
 			break;
 		case CM_PIN_BUTTON_PRESSED_6:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_6", L"Enter digit of pin | 6 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 6);
+			WTDB_Debug(L"PIN_6", L"Enter digit of pin | 6 |");
+			PWDC_AddPincodeBuffer(pSim, 6);
 			break;
 		case CM_PIN_BUTTON_PRESSED_7:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_7", L"Enter digit of pin | 7 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 7);
+			WTDB_Debug(L"PIN_7", L"Enter digit of pin | 7 |");
+			PWDC_AddPincodeBuffer(pSim, 7);
 			break;
 		case CM_PIN_BUTTON_PRESSED_8:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_8", L"Enter digit of pin | 8 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 8);
+			WTDB_Debug(L"PIN_8", L"Enter digit of pin | 8 |");
+			PWDC_AddPincodeBuffer(pSim, 8);
 			break;
 		case CM_PIN_BUTTON_PRESSED_9:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_9", L"Enter digit of pin | 9 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 9);
+			WTDB_Debug(L"PIN_9", L"Enter digit of pin | 9 |");
+			PWDC_AddPincodeBuffer(pSim, 9);
 			break;
 		case CM_PIN_BUTTON_PRESSED_0:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_0", L"Enter digit of pin | 0 |");
-			PWDC_AddToDebitCardCodeBuffer(pSim, 0);
+			WTDB_Debug(L"PIN_0", L"Enter digit of pin | 0 |");
+			PWDC_AddPincodeBuffer(pSim, 0);
 			break;
 		case CM_PIN_BUTTON_PRESSED_OK:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_OK", L"Validating pin");
-			PWDC_CheckDebitCardCode(pSim);
+			WTDB_Debug(L"PIN_OK", L"Validating pin");
+			PWDC_CheckPincode(pSim);
 			break;
 		case CM_PIN_BUTTON_PRESSED_DEL:
-			ATDB_Debug(L"CM_PIN_BUTTON_PRESSED_1", L"Remove pin digit from buffer");
-			PWDC_RemoveFromDebitCardCodeBuffer(pSim, 0);
+			WTDB_Debug(L"PIN_DEL", L"Remove pin digit from buffer");
+			PWDC_RemovePincodeBuffer(pSim, 0);
 			break;
 		}
 		break;
@@ -251,10 +260,10 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 	}
 	case WM_SETFONT:
 	{
-		
+
 	}
 	case WM_PAINT:
-	{	
+	{
 		BeginPaint(H_Window, &ps);
 
 		EndPaint(H_Window, &ps);

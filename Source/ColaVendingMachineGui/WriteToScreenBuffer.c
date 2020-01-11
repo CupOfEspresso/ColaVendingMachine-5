@@ -1,85 +1,48 @@
 #include "WriteToScreenBuffer.h"
 
-
-//void WTSB_StaticChar(wchar_t buffer, HWND handler)
-//{
-//	wchar_t bufferEdited[BUFFSIZE];
-//
-//	wsprintf(bufferEdited, L"DEBUG: %s", buffer);
-//	SetWindowText(handler, bufferEdited);
-//}
-
-void WTSB_StaticCashCents(sim_t* pSim)
+void WTSB_StaticInMachine(sim_t* pSim)
 {
 	wchar_t bufferEdited[BUFFSIZE];
 
-	wsprintf(bufferEdited, L"%d", pSim->moneyInMachineCents);
-	SetWindowText(H_Change_Cash_Cents, bufferEdited);
+	double moneyInMachineDouble = pSim->moneyInMachine / 100.0;
+
+	swprintf(bufferEdited, BUFFSIZE, L"\u20AC%.2f", moneyInMachineDouble);
+	SetWindowText(H_Change_Cash, bufferEdited);
 }
 
-void WTSB_StaticCashEuros(sim_t* pSim)
+void WTSB_StaticChange(sim_t* pSim)
 {
 	wchar_t bufferEdited[BUFFSIZE];
 
-	wsprintf(bufferEdited, L"%d", pSim->moneyInMachineEuros);
-	SetWindowText(H_Change_Cash_Euros, bufferEdited);
+	double changeInMachineDouble = pSim->changeInMachine / 100.0;
+
+	swprintf(bufferEdited, BUFFSIZE, L"\u20AC%.2f", changeInMachineDouble);
+	SetWindowText(H_Change_Change, bufferEdited);
 }
 
-void WTSB_StaticChangeCents(sim_t* pSim)
+void WTSB_StaticWallet(sim_t* pSim)
 {
 	wchar_t bufferEdited[BUFFSIZE];
 
-	wsprintf(bufferEdited, L"%d", pSim->changeInMachineCents);
-	SetWindowText(H_Change_Change_Cents, bufferEdited);
+	double moneyInWalletDouble = pSim->moneyInWallet / 100.0;
+
+	swprintf(bufferEdited, BUFFSIZE, L"\u20AC%.2f", moneyInWalletDouble);
+	SetWindowText(H_Change_Wallet, bufferEdited);
 }
 
-void WTSB_StaticChangeEuros(sim_t* pSim)
+void WTSB_StaticAccount(sim_t* pSim)
 {
 	wchar_t bufferEdited[BUFFSIZE];
 
-	wsprintf(bufferEdited, L"%d", pSim->changeInMachineEuros);
-	SetWindowText(H_Change_Change_Euros, bufferEdited);
-}
+	double moneyInAccountDouble = pSim->moneyInAccount / 100.0;
 
-void WTSB_StaticWalletCents(sim_t* pSim)
-{
-	wchar_t bufferEdited[BUFFSIZE];
-
-	wsprintf(bufferEdited, L"%d", pSim->moneyInWalletCents);
-	SetWindowText(H_Change_Wallet_Cents, bufferEdited);
-}
-
-void WTSB_StaticWalletEuros(sim_t* pSim)
-{
-	wchar_t bufferEdited[BUFFSIZE];
-
-	wsprintf(bufferEdited, L"%d", pSim->moneyInWalletEuros);
-	SetWindowText(H_Change_Wallet_Euros, bufferEdited);
-}
-
-void WTSB_StaticAccountCents(sim_t* pSim)
-{
-	wchar_t bufferEdited[BUFFSIZE];
-
-	wsprintf(bufferEdited, L"%d", pSim->moneyInAccountCents);
-	SetWindowText(H_Change_Account_Cents, bufferEdited);
-}
-
-void WTSB_StaticAccountEuros(sim_t* pSim)
-{
-	wchar_t bufferEdited[BUFFSIZE];
-
-	wsprintf(bufferEdited, L"%d", pSim->moneyInAccountEuros);
-	SetWindowText(H_Change_Account_Euros, bufferEdited);
+	swprintf(bufferEdited, BUFFSIZE, L"\u20AC%.2f", moneyInAccountDouble);
+	SetWindowText(H_Change_Account, bufferEdited);
 }
 
 void WTSB_Redraw(sim_t* pSim) {
-	WTSB_StaticCashCents(pSim);
-	WTSB_StaticCashEuros(pSim);
-	WTSB_StaticChangeCents(pSim);
-	WTSB_StaticChangeEuros(pSim);
-	WTSB_StaticWalletCents(pSim);
-	WTSB_StaticWalletEuros(pSim);
-	WTSB_StaticAccountEuros(pSim);
-	WTSB_StaticAccountCents(pSim);
+	WTSB_StaticInMachine(pSim);
+	WTSB_StaticChange(pSim);
+	WTSB_StaticWallet(pSim);
+	WTSB_StaticAccount(pSim);
 }

@@ -1,21 +1,23 @@
 #include "PayWithDebitCard.h"
 
-PWDC_EnterAndRemoveDebitCard(sim_t* pSim)
+PWDC_DebitcardHandeling(sim_t* pSim)
 {
 	if (pSim->isDebitCardEntered == 0)
 	{
 		pSim->isDebitCardEntered = 1;
+		WTDB_Debug(L"PWDC_DebitcardHandeling", L"Debitcard recogisned");
 		SetWindowTextW(H_DebitCard, L"Take debitcard");
 	}
 	else
 	{
 		pSim->isDebitCardEntered = 0;
+		WTDB_Debug(L"PWDC_DebitcardHandeling", L"Debitcard removed");
 		SetWindowTextW(H_DebitCard, L"Enter debitcard");
 	}
 }
 
 
-PWDC_AddToDebitCardCodeBuffer(sim_t* pSim, int pinNumber)
+PWDC_AddPincodeBuffer(sim_t* pSim, int pinNumber)
 {
 	if (pSim->isDebitCardEntered == 1)
 	{
@@ -26,16 +28,18 @@ PWDC_AddToDebitCardCodeBuffer(sim_t* pSim, int pinNumber)
 		}
 		else
 		{
-			MessageBoxW(NULL, L"Please confirm or change you password", L"PayWithDebitCard", MB_OK);
+			WTDB_Debug(L"PWDC_AddPincodeBuffer", L"Max. number of digits enterd");
+			WTDB_Display(L"Please confirm or change you password");
 		}
 	}
 	else
 	{
-		MessageBoxW(NULL, L"Please enter you debitcard", L"PayWithDebitCard", MB_OK);
+		WTDB_Debug(L"PWDC_AddPincodeBuffer", L"Debitcard not found");
+		WTDB_Display(L"Please enter you debitcard");
 	}
 }
 
-PWDC_RemoveFromDebitCardCodeBuffer(sim_t* pSim)
+PWDC_RemovePincodeBuffer(sim_t* pSim)
 {
 	if (pSim->isDebitCardEntered == 1)
 	{
@@ -46,26 +50,29 @@ PWDC_RemoveFromDebitCardCodeBuffer(sim_t* pSim)
 		}
 		else
 		{
-			MessageBoxW(NULL, L"there are no digit in this code left", L"debitcard", MB_OK);
+			WTDB_Debug(L"PWDC_RemovePincodeBuffer", L"No digits in buffer");
+			WTDB_Display(L"There are no digit in this pincode left");
 		}
 	}
 	else
 	{
-		MessageBoxW(NULL, L"Please enter you debitcard", L"PayWithDebitCard", MB_OK);
+		WTDB_Debug(L"PWDC_RemovePincodeBuffer", L"Please enter you debitcard");
 	}
 }
 
-PWDC_CheckDebitCardCode(sim_t* pSim)
+PWDC_CheckPincode(sim_t* pSim)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (pSim->debitCardCode[i] != pSim->POINTOFCONCEPTPASSWORD[i]) {
+		if (pSim->debitCardCode[i] != pSim->POINTOFCONCEPTPASSWORD[i]) 
+		{
 			for (int i = 0; i <= 3; ++i)
 			{
 				pSim->debitCardCode[i] = 0;
 			}
 			pSim->postionInCardCode = 0;
-			MessageBoxW(NULL, L"Wrong password, try again", L"ERROR", MB_OK);
+			WTDB_Debug(L"PWDC_CheckPincode", L"Pincode wasn't valid");
+			WTDB_Display(L"Wrong pincode, try again");
 			break;
 		}
 		else if (i == 3)
@@ -74,11 +81,11 @@ PWDC_CheckDebitCardCode(sim_t* pSim)
 			{
 				pSim->debitCardCode[i] = 0;
 			}
+			WTDB_Debug(L"PWDC_CheckPincode", L"Pincode valid");
 			pSim->hasPaid = 1;
 			pSim->postionInCardCode = 0;
-			MessageBoxW(NULL, L"Please choose a drink to complete your transaction", L"PAY", MB_OK);
+			WTDB_Debug(L"PWDC_CheckPincode", L"Sending debitcard transaction");
+			WTDB_Display(L"Please choose a drink to complete your transaction");
 		}
 	}
 }
-
-
