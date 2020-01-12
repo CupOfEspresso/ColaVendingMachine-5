@@ -22,9 +22,9 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 {
 	srand(time(0));
 
-	//int isAdmin = MessageBoxW(NULL, L"Are you trying to debug?", L"Admin", MB_ICONQUESTION | MB_YESNO);
 	int change = 0.0;
 
+	/// Easteregg, there is a 1 in 100 change there is still some left over change in the change tray
 	if ((rand() % 100) == 42)
 	{
 		change = (rand() % 500 + 1);
@@ -33,7 +33,8 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 	{
 		change = 0;
 	}
-
+	 
+	/// This struct contains all system infomation
 	sim_t simulation = {      
 	(rand() % 5000 + 500),    //moneyInWallet
 	(rand() % 100000),		  //moneyInAccount
@@ -81,6 +82,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 
 LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 {
+	/// this struct contain all money value they are const and are given in cents
 	valuta_t valuta = {
 	1,  //V_1_CENT
 	2,  //V_2_CENT
@@ -101,7 +103,7 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 
 
 	switch (msg) {
-
+	/// this INIT's all onscreen objects
 	case WM_CREATE:
 	{
 		INIT_Button(H_Window);
@@ -110,6 +112,7 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 		INIT_Edit(H_Window);
 		break;
 	}
+	/// Here is the state machine it react upon a button click
 	case WM_COMMAND:
 	{
 		switch (wp) {
@@ -253,6 +256,7 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 		}
 		break;
 	}
+	/// Sets color of all static
 	case WM_CTLCOLORSTATIC:
 	{
 		hb = CreateSolidBrush(RGB(255, 255, 255));
@@ -262,16 +266,12 @@ LRESULT CALLBACK WindowProcedure(HWND H_Window, UINT msg, WPARAM wp, LPARAM lp)
 	{
 
 	}
-	case WM_PAINT:
-	{
-		BeginPaint(H_Window, &ps);
-
-		EndPaint(H_Window, &ps);
-		return 0;
-	}
+	/// This Exits the program and clears the memory used
 	case WM_DESTROY:
+	{
 		PostQuitMessage(0);
 		break;
+	}
 	default:
 		return DefWindowProcW(H_Window, msg, wp, lp);
 	}

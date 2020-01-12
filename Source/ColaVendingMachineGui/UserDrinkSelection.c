@@ -3,6 +3,7 @@
 
 void UDS_Setup(int D_Name, drink_t* pDrink)
 {
+	/// Sets the right varables depending on which button you pressed
 	switch (D_Name) {
 	case D_COLA:
 		wcscpy_s(pDrink->drinkName, BUFFSIZE, L"Cola");

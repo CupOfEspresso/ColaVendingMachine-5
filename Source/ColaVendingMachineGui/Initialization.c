@@ -2,6 +2,7 @@
 
 int INIT_Button(HWND H_Window)
 {
+	/// Renders all button objects on screen
 	int CoinTrayPosX = 500;
 	int CTPXBak = CoinTrayPosX;
 	int CoinTrayPosY = 450;
@@ -56,6 +57,7 @@ int INIT_Button(HWND H_Window)
 
 int INIT_Static(HWND H_Window, sim_t* pSim)
 {
+    /// Renders all static objects
 	int DisplayPosX = 20;
 	int DisplayPosY = 195;
 
@@ -95,6 +97,7 @@ int INIT_Static(HWND H_Window, sim_t* pSim)
 
 int INIT_Menu(HWND H_Window)
 {
+	/// Renders all menu's
 	H_MENU = CreateMenu();
 
 	/// Menu for admin rights
@@ -107,7 +110,7 @@ int INIT_Menu(HWND H_Window)
 
 int INIT_Edit(HWND H_Window)
 {
-	/// Edit for the debug messsages also enabling and showing the scrollbar
+	/// Renders the edit for the debug messsages also enabling and showing the scrollbar
 	H_Change_Debug = CreateWindowW(L"edit", NULL, WS_CHILD | ES_MULTILINE | ES_WANTRETURN | WS_VISIBLE | WS_BORDER | SS_LEFT | ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | SB_RIGHT, 500, 20, 450, 400, H_Window, NULL, NULL, NULL);
 	EnableScrollBar(H_Change_Debug, SB_VERT, ESB_ENABLE_BOTH);
 	ShowScrollBar(H_Change_Debug, SB_VERT, TRUE);

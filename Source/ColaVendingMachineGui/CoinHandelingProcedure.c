@@ -4,6 +4,7 @@
 
 void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 {
+	/// This function Checks if there is enough money to by a drink
 	wchar_t bufferEdited[BUFFSIZE] = { 0 };
 	drink_t drinks = { L"ERROR", 0};
 	drink_t* pDrink = &drinks;
@@ -51,8 +52,7 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 void CHP_CheckCoins(sim_t* pSim, int money)
 {
 	wchar_t bufferEdited[BUFFSIZE] = { 0 };
-	/// This function Calculates the right values for each money related screen buffer
-	
+	/// This function Writes the right values for each money related screen buffer
 	
 	if (pSim->moneyInWallet - money >= 0)
 	{
@@ -74,6 +74,7 @@ void CHP_CheckCoins(sim_t* pSim, int money)
 
 void CHP_CalculateValueOfCoin(sim_t* pSim, int money)
 {
+	/// Function calculates the right values regrading money
 	wchar_t buffer[BUFFSIZE] = { 0 };
 	if (pSim->moneyInWallet - money >= 0)
 	{
@@ -93,6 +94,7 @@ void CHP_CalculateValueOfCoin(sim_t* pSim, int money)
 
 void CHP_ChangeHandeling(sim_t* pSim)
 {
+	/// This function handels the change
 	wchar_t bufferEdited[BUFFSIZE];
 
 	if ((pSim->changeInMachine != 0))
@@ -127,6 +129,7 @@ void CHP_ChangeHandeling(sim_t* pSim)
 
 void CHP_AdminDebugFunctionallity(sim_t* pSim)
 {
+	/// Admin right for this machine can be used to debug the machine. the rights can be expanded
 	pSim->moneyInWallet = 1000000;
 	pSim->moneyInAccount = 1000000;
 

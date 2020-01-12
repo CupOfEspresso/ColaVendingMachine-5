@@ -2,6 +2,7 @@
 
 PWDC_DebitcardHandeling(sim_t* pSim)
 {
+	/// This lets you enter or remove your debitcard
 	if (pSim->isDebitCardEntered == 0)
 	{
 		pSim->isDebitCardEntered = 1;
@@ -19,6 +20,7 @@ PWDC_DebitcardHandeling(sim_t* pSim)
 
 PWDC_AddPincodeBuffer(sim_t* pSim, int pinNumber)
 {
+	/// This adds a digit to the pincode buffer
 	if (pSim->isDebitCardEntered == 1)
 	{
 		if (pSim->postionInCardCode != 4)
@@ -41,6 +43,7 @@ PWDC_AddPincodeBuffer(sim_t* pSim, int pinNumber)
 
 PWDC_RemovePincodeBuffer(sim_t* pSim)
 {
+	/// this removes a digit from pincode buffer
 	if (pSim->isDebitCardEntered == 1)
 	{
 		if (pSim->postionInCardCode - 1 >= 0)
@@ -62,6 +65,7 @@ PWDC_RemovePincodeBuffer(sim_t* pSim)
 
 PWDC_CheckPincode(sim_t* pSim)
 {
+	///this validate the pincode against a database or for this sim the POINTOFCONCEPTPASSWORD
 	for (int i = 0; i < 4; i++)
 	{
 		if (pSim->debitCardCode[i] != pSim->POINTOFCONCEPTPASSWORD[i]) 
