@@ -34,16 +34,16 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR args, int ncmdsho
 		change = 0;
 	}
 
-	sim_t simulation = {
-	(rand() % 5000 + 500),
-	(rand() % 100000),
-	change,
-	0,
-	0,
-	0,
-	0, //hasPaid
-	{0, 0, 0, 0}, // debitCardCode
-	{1, 3, 3, 7} // POINTOFCONCEPTPASSWORD
+	sim_t simulation = {      
+	(rand() % 5000 + 500),    //moneyInWallet
+	(rand() % 100000),		  //moneyInAccount
+	change,					  //changeInMachine
+	0,						  //moneyInMachine
+	0,						  //isDebitCardEntered
+	0,						  //postionInCardCode
+	0,                        //hasPaid
+	{0, 0, 0, 0},             //debitCardCode[4]
+	{1, 3, 3, 7}              //POINTOFCONCEPTPASSWORD[4]
 	};
 
 	sim_t* pSim = &simulation;

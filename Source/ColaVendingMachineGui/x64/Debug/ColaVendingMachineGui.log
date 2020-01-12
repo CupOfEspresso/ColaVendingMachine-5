@@ -1,7 +1,4 @@
-﻿  WriteToDisplayBuffers.c
-  CoinHandelingProcedure.c
-  Initialization.c
-  main.c
+﻿  main.c
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(23,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(57,38): warning C4047: 'function': 'LPCWSTR' differs in levels of indirection from 'int'
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(57,38): warning C4024: 'LoadIconW': different types for formal and actual parameter 2
@@ -14,9 +11,5 @@ C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(198,23): warning C4013: 'CHP_ChangeHandeling' undefined; assuming extern returning int
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(251,36): warning C4020: 'PWDC_RemovePincodeBuffer': too many actual parameters
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(99,1): warning C4047: 'initializing': 'sim_t *' differs in levels of indirection from 'LONG_PTR'
-  PayWithDebitCard.c
-  UserDrinkSelection.c
-  WriteToScreenBuffer.c
-  Generating Code...
 C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\ColaVendingMachineGui\main.c(278): warning C4715: 'WindowProcedure': not all control paths return a value
   ColaVendingMachineGui.vcxproj -> C:\Users\AL20741\source\repos\ColaVendingMachine-5\Source\x64\Debug\ColaVendingMachineGui.exe
