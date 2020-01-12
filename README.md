@@ -5,6 +5,7 @@ It was part of the Curriculum of Electrical Engineering at <a href="https://www.
 The whole project was based on the CLI version of <a href="https://github.com/josokw">Jos Onokiewicz Cola Vending Machine 3</a>.
 
 # Project Info
-Lines of code [.c]: 916 in v1.7
-Lines of code [.h]: 251 in v1.7
-Lines of code [totale]: 1167 in v1.7
+Lines of code in \*.c: 727 <br>
+Lines of code in \*.h: 196 <br>
+Lines totale of code: 923 <br>
+
