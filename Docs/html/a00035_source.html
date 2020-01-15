@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cola Vending Machine 5: WriteToScreenBuffer.h Source File</title>
+<title>Cola Vending Machine 5: WriteToDisplayBuffers.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,49 +88,45 @@ $(document).ready(function(){initNavTree('a00035_source.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">WriteToScreenBuffer.h</div>  </div>
+<div class="title">WriteToDisplayBuffers.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00035.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef WRITETOSCREENBUFFER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define WRITETOSCREENBUFFER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00008.html">ColaVendingMachineGui.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00014.html">Initialization.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00005.html">CoinHandelingProcedure.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00029.html">UserDrinkSelection.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#aa999526dbd28df60d1cf256666c65d91">WTSB_StaticChar</a>(<span class="keywordtype">wchar_t</span> buffer, HWND handler);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#a87a9e44ec947fa974d1035b7775349bf">WTSB_StaticCashCents</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#a12a95729e90d6b24accfaa464e2df3a8">WTSB_StaticCashEuros</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#a81adb3eec37c8294d9bc53aefa065cec">WTSB_StaticChangeCents</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#ae2e7f65a5e0fe53480c08b38caf7c970">WTSB_StaticChangeEuros</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#a42f0f7f0f0cc17d92924ac7ffeec3194">WTSB_StaticWalletCents</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#a49c465d0b0b0bf4dec9d99006efe6df9">WTSB_StaticWalletEuros</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a">WTSB_Redraw</a>(<a class="code" href="a00041.html">sim_t</a>*);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif // !WRITETOSCREENBUFFER_H</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<a href="a00035.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00038.html">WriteToDisplayBuffers.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="a00038.html#aeb6703d6d3db22b4d812280b2384ac0c">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#ab3b640e84195a8e6831a78c8f1043f5f">WTDB_Debug</a>(<span class="keywordtype">wchar_t</span> inFunction[], <span class="keywordtype">wchar_t</span> withText[])</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">wchar_t</span> formatedbuffer[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>], buffTemp[<a class="code" href="a00038.html#aa38db5457275bf700dd1c2a40bf838a9">DEBUGBUFFER</a>];</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> lengthDebugBuff = 0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> debugListCounter = 0;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    wsprintf(formatedbuffer, L<span class="stringliteral">&quot;[%d] %s: %s\r\n&quot;</span>, debugListCounter++, inFunction, withText);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    lengthDebugBuff = GetWindowTextLength(<a class="code" href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a>) + lstrlen(formatedbuffer) + 1;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    GetWindowText(<a class="code" href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a>, buffTemp, lengthDebugBuff);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    wcscat_s(buffTemp, lengthDebugBuff, formatedbuffer);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    SetWindowTextW(<a class="code" href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a>, buffTemp);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00038.html#a0fcc52234a03669081ff1c776e94872b">   18</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00035.html#a923d061927529740f7493db16b302326">WTDB_Display</a>(<span class="keywordtype">wchar_t</span> MenuDisplayBuffer[])</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%s&quot;</span>, MenuDisplayBuffer);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a7b770477000e7ac49712d783cabf6c9b">H_Change_Display</a>, bufferEdited);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00035_html_aa6ad4d8692b772881f8d097c66a7cd1a"><div class="ttname"><a href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a">WTSB_Redraw</a></div><div class="ttdeci">void WTSB_Redraw(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00060">WriteToScreenBuffer.c:60</a></div></div>
-<div class="ttc" id="aa00008_html"><div class="ttname"><a href="a00008.html">ColaVendingMachineGui.h</a></div></div>
-<div class="ttc" id="aa00035_html_a49c465d0b0b0bf4dec9d99006efe6df9"><div class="ttname"><a href="a00035.html#a49c465d0b0b0bf4dec9d99006efe6df9">WTSB_StaticWalletEuros</a></div><div class="ttdeci">void WTSB_StaticWalletEuros(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00052">WriteToScreenBuffer.c:52</a></div></div>
-<div class="ttc" id="aa00029_html"><div class="ttname"><a href="a00029.html">UserDrinkSelection.h</a></div></div>
-<div class="ttc" id="aa00035_html_a42f0f7f0f0cc17d92924ac7ffeec3194"><div class="ttname"><a href="a00035.html#a42f0f7f0f0cc17d92924ac7ffeec3194">WTSB_StaticWalletCents</a></div><div class="ttdeci">void WTSB_StaticWalletCents(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00044">WriteToScreenBuffer.c:44</a></div></div>
-<div class="ttc" id="aa00035_html_a12a95729e90d6b24accfaa464e2df3a8"><div class="ttname"><a href="a00035.html#a12a95729e90d6b24accfaa464e2df3a8">WTSB_StaticCashEuros</a></div><div class="ttdeci">void WTSB_StaticCashEuros(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00020">WriteToScreenBuffer.c:20</a></div></div>
-<div class="ttc" id="aa00005_html"><div class="ttname"><a href="a00005.html">CoinHandelingProcedure.h</a></div></div>
-<div class="ttc" id="aa00035_html_ae2e7f65a5e0fe53480c08b38caf7c970"><div class="ttname"><a href="a00035.html#ae2e7f65a5e0fe53480c08b38caf7c970">WTSB_StaticChangeEuros</a></div><div class="ttdeci">void WTSB_StaticChangeEuros(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00036">WriteToScreenBuffer.c:36</a></div></div>
-<div class="ttc" id="aa00014_html"><div class="ttname"><a href="a00014.html">Initialization.h</a></div></div>
-<div class="ttc" id="aa00035_html_a81adb3eec37c8294d9bc53aefa065cec"><div class="ttname"><a href="a00035.html#a81adb3eec37c8294d9bc53aefa065cec">WTSB_StaticChangeCents</a></div><div class="ttdeci">void WTSB_StaticChangeCents(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00028">WriteToScreenBuffer.c:28</a></div></div>
-<div class="ttc" id="aa00035_html_aa999526dbd28df60d1cf256666c65d91"><div class="ttname"><a href="a00035.html#aa999526dbd28df60d1cf256666c65d91">WTSB_StaticChar</a></div><div class="ttdeci">void WTSB_StaticChar(wchar_t buffer, HWND handler)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00004">WriteToScreenBuffer.c:4</a></div></div>
-<div class="ttc" id="aa00041_html"><div class="ttname"><a href="a00041.html">sim_t</a></div><div class="ttdef"><b>Definition:</b> <a href="a00014_source.html#l00004">Initialization.h:4</a></div></div>
-<div class="ttc" id="aa00035_html_a87a9e44ec947fa974d1035b7775349bf"><div class="ttname"><a href="a00035.html#a87a9e44ec947fa974d1035b7775349bf">WTSB_StaticCashCents</a></div><div class="ttdeci">void WTSB_StaticCashCents(sim_t *)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00012">WriteToScreenBuffer.c:12</a></div></div>
+<div class="ttc" id="aa00008_html_ad859b2dc1b112b864807e9e22728150b"><div class="ttname"><a href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a></div><div class="ttdeci">HWND H_Change_Debug</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00046">ColaVendingMachineGui.h:46</a></div></div>
+<div class="ttc" id="aa00038_html"><div class="ttname"><a href="a00038.html">WriteToDisplayBuffers.h</a></div></div>
+<div class="ttc" id="aa00008_html_a39912bfe2a55f30e269196f9141d845d"><div class="ttname"><a href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a></div><div class="ttdeci">#define BUFFSIZE</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00004">ColaVendingMachineGui.h:4</a></div></div>
+<div class="ttc" id="aa00038_html_aa38db5457275bf700dd1c2a40bf838a9"><div class="ttname"><a href="a00038.html#aa38db5457275bf700dd1c2a40bf838a9">DEBUGBUFFER</a></div><div class="ttdeci">#define DEBUGBUFFER</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00011">WriteToDisplayBuffers.h:11</a></div></div>
+<div class="ttc" id="aa00035_html_a923d061927529740f7493db16b302326"><div class="ttname"><a href="a00035.html#a923d061927529740f7493db16b302326">WTDB_Display</a></div><div class="ttdeci">void WTDB_Display(wchar_t MenuDisplayBuffer[])</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00018">WriteToDisplayBuffers.c:18</a></div></div>
+<div class="ttc" id="aa00008_html_a7b770477000e7ac49712d783cabf6c9b"><div class="ttname"><a href="a00008.html#a7b770477000e7ac49712d783cabf6c9b">H_Change_Display</a></div><div class="ttdeci">HWND H_Change_Display</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00046">ColaVendingMachineGui.h:46</a></div></div>
+<div class="ttc" id="aa00035_html_ab3b640e84195a8e6831a78c8f1043f5f"><div class="ttname"><a href="a00035.html#ab3b640e84195a8e6831a78c8f1043f5f">WTDB_Debug</a></div><div class="ttdeci">void WTDB_Debug(wchar_t inFunction[], wchar_t withText[])</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00003">WriteToDisplayBuffers.c:3</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_daaf0645d7aba630447153f324bee2a3.html">ColaVendingMachineGui</a></li><li class="navelem"><a class="el" href="a00035.html">WriteToScreenBuffer.h</a></li>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_daaf0645d7aba630447153f324bee2a3.html">ColaVendingMachineGui</a></li><li class="navelem"><a class="el" href="a00035.html">WriteToDisplayBuffers.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

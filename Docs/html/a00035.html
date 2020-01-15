@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cola Vending Machine 5: WriteToScreenBuffer.h File Reference</title>
+<title>Cola Vending Machine 5: WriteToDisplayBuffers.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,48 +90,28 @@ $(document).ready(function(){initNavTree('a00035.html','');});
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">WriteToScreenBuffer.h File Reference</div>  </div>
+<div class="title">WriteToDisplayBuffers.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;Windows.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00008_source.html">ColaVendingMachineGui.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00014_source.html">Initialization.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00005_source.html">CoinHandelingProcedure.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00029_source.html">UserDrinkSelection.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00038_source.html">WriteToDisplayBuffers.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for WriteToScreenBuffer.h:</div>
+Include dependency graph for WriteToDisplayBuffers.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00036.png" border="0" usemap="#_write_to_screen_buffer_8h" alt=""/></div>
-<map name="_write_to_screen_buffer_8h" id="_write_to_screen_buffer_8h">
-<area shape="rect" title=" " alt="" coords="647,5,799,32"/>
-<area shape="rect" title=" " alt="" coords="5,229,92,256"/>
-<area shape="rect" href="a00008.html" title=" " alt="" coords="412,80,587,107"/>
-<area shape="rect" href="a00014.html" title=" " alt="" coords="586,379,687,405"/>
-<area shape="rect" href="a00005.html" title=" " alt="" coords="549,304,724,331"/>
-<area shape="rect" href="a00029.html" title=" " alt="" coords="623,229,767,256"/>
-<area shape="rect" title=" " alt="" coords="218,229,282,256"/>
-<area shape="rect" title=" " alt="" coords="306,229,367,256"/>
-<area shape="rect" title=" " alt="" coords="391,229,450,256"/>
-<area shape="rect" href="a00023.html" title=" " alt="" coords="157,155,297,181"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00037.png" border="0" usemap="#_write_to_screen_buffer_8hdep" alt=""/></div>
-<map name="_write_to_screen_buffer_8hdep" id="_write_to_screen_buffer_8hdep">
-<area shape="rect" title=" " alt="" coords="399,5,551,32"/>
-<area shape="rect" href="a00029.html" title=" " alt="" coords="459,80,603,107"/>
-<area shape="rect" href="a00014.html" title=" " alt="" coords="280,155,381,181"/>
-<area shape="rect" href="a00008.html" title=" " alt="" coords="538,304,713,331"/>
-<area shape="rect" href="a00005.html" title=" " alt="" coords="338,379,513,405"/>
-<area shape="rect" href="a00023.html" title=" " alt="" coords="267,229,407,256"/>
-<area shape="rect" href="a00032.html" title=" " alt="" coords="781,80,933,107"/>
-<area shape="rect" href="a00026.html" title=" " alt="" coords="676,379,820,405"/>
-<area shape="rect" href="a00011.html" title=" " alt="" coords="67,229,168,256"/>
-<area shape="rect" href="a00002.html" title=" " alt="" coords="443,453,618,480"/>
-<area shape="rect" href="a00017.html" title=" " alt="" coords="537,379,599,405"/>
-<area shape="rect" href="a00020.html" title=" " alt="" coords="247,304,387,331"/>
+<div class="center"><img src="a00036.png" border="0" usemap="#_write_to_display_buffers_8c" alt=""/></div>
+<map name="_write_to_display_buffers_8c" id="_write_to_display_buffers_8c">
+<area shape="rect" title=" " alt="" coords="335,5,496,32"/>
+<area shape="rect" href="a00038.html" title=" " alt="" coords="335,80,496,107"/>
+<area shape="rect" href="a00014.html" title=" " alt="" coords="365,155,466,181"/>
+<area shape="rect" href="a00008.html" title=" " alt="" coords="169,453,344,480"/>
+<area shape="rect" href="a00005.html" title=" " alt="" coords="487,379,661,405"/>
+<area shape="rect" href="a00032.html" title=" " alt="" coords="435,304,579,331"/>
+<area shape="rect" href="a00044.html" title=" " alt="" coords="165,229,317,256"/>
+<area shape="rect" href="a00023.html" title=" " alt="" coords="480,528,620,555"/>
+<area shape="rect" title=" " alt="" coords="5,528,92,555"/>
+<area shape="rect" title=" " alt="" coords="306,528,370,555"/>
+<area shape="rect" title=" " alt="" coords="394,528,455,555"/>
+<area shape="rect" title=" " alt="" coords="117,528,175,555"/>
+<area shape="rect" href="a00026.html" title=" " alt="" coords="199,528,282,555"/>
 </map>
 </div>
 </div>
@@ -139,266 +119,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa999526dbd28df60d1cf256666c65d91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#aa999526dbd28df60d1cf256666c65d91">WTSB_StaticChar</a> (wchar_t buffer, HWND handler)</td></tr>
-<tr class="separator:aa999526dbd28df60d1cf256666c65d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87a9e44ec947fa974d1035b7775349bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#a87a9e44ec947fa974d1035b7775349bf">WTSB_StaticCashCents</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:a87a9e44ec947fa974d1035b7775349bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12a95729e90d6b24accfaa464e2df3a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#a12a95729e90d6b24accfaa464e2df3a8">WTSB_StaticCashEuros</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:a12a95729e90d6b24accfaa464e2df3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81adb3eec37c8294d9bc53aefa065cec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#a81adb3eec37c8294d9bc53aefa065cec">WTSB_StaticChangeCents</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:a81adb3eec37c8294d9bc53aefa065cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e7f65a5e0fe53480c08b38caf7c970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#ae2e7f65a5e0fe53480c08b38caf7c970">WTSB_StaticChangeEuros</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:ae2e7f65a5e0fe53480c08b38caf7c970"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f0f7f0f0cc17d92924ac7ffeec3194"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#a42f0f7f0f0cc17d92924ac7ffeec3194">WTSB_StaticWalletCents</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:a42f0f7f0f0cc17d92924ac7ffeec3194"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49c465d0b0b0bf4dec9d99006efe6df9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#a49c465d0b0b0bf4dec9d99006efe6df9">WTSB_StaticWalletEuros</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:a49c465d0b0b0bf4dec9d99006efe6df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6ad4d8692b772881f8d097c66a7cd1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a">WTSB_Redraw</a> (<a class="el" href="a00041.html">sim_t</a> *)</td></tr>
-<tr class="separator:aa6ad4d8692b772881f8d097c66a7cd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b640e84195a8e6831a78c8f1043f5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#ab3b640e84195a8e6831a78c8f1043f5f">WTDB_Debug</a> (wchar_t inFunction[], wchar_t withText[])</td></tr>
+<tr class="separator:ab3b640e84195a8e6831a78c8f1043f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923d061927529740f7493db16b302326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035.html#a923d061927529740f7493db16b302326">WTDB_Display</a> (wchar_t MenuDisplayBuffer[])</td></tr>
+<tr class="separator:a923d061927529740f7493db16b302326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa6ad4d8692b772881f8d097c66a7cd1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6ad4d8692b772881f8d097c66a7cd1a">&#9670;&nbsp;</a></span>WTSB_Redraw()</h2>
+<a id="ab3b640e84195a8e6831a78c8f1043f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b640e84195a8e6831a78c8f1043f5f">&#9670;&nbsp;</a></span>WTDB_Debug()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void WTSB_Redraw </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00060">60</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                              {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="a00032.html#a09c94b2738d97d78ae15fd632f4d7e58">WTSB_StaticCashCents</a>(pSim);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="a00032.html#ab9e81a4fb50ec3942b0653fb8e46c747">WTSB_StaticCashEuros</a>(pSim);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="a00032.html#acd94f0b7a1c4ad9e4bf366e06b6042fb">WTSB_StaticChangeCents</a>(pSim);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="a00032.html#ac178cf969810bd21440deb5672d188b4">WTSB_StaticChangeEuros</a>(pSim);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="a00032.html#a6e13b8af19c79cf451b5500ce75420a6">WTSB_StaticWalletCents</a>(pSim);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="a00032.html#a0a0036ec3f45acade69e0acba4a9f43d">WTSB_StaticWalletEuros</a>(pSim);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00035_aa6ad4d8692b772881f8d097c66a7cd1a_cgraph.png" border="0" usemap="#a00035_aa6ad4d8692b772881f8d097c66a7cd1a_cgraph" alt=""/></div>
-<map name="a00035_aa6ad4d8692b772881f8d097c66a7cd1a_cgraph" id="a00035_aa6ad4d8692b772881f8d097c66a7cd1a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,116,159"/>
-<area shape="rect" href="a00032.html#a09c94b2738d97d78ae15fd632f4d7e58" title=" " alt="" coords="171,5,336,32"/>
-<area shape="rect" href="a00032.html#ab9e81a4fb50ec3942b0653fb8e46c747" title=" " alt="" coords="171,56,336,83"/>
-<area shape="rect" href="a00032.html#acd94f0b7a1c4ad9e4bf366e06b6042fb" title=" " alt="" coords="164,107,343,133"/>
-<area shape="rect" href="a00032.html#ac178cf969810bd21440deb5672d188b4" title=" " alt="" coords="164,157,343,184"/>
-<area shape="rect" href="a00032.html#a6e13b8af19c79cf451b5500ce75420a6" title=" " alt="" coords="167,208,339,235"/>
-<area shape="rect" href="a00032.html#a0a0036ec3f45acade69e0acba4a9f43d" title=" " alt="" coords="167,259,339,285"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00035_aa6ad4d8692b772881f8d097c66a7cd1a_icgraph.png" border="0" usemap="#a00035_aa6ad4d8692b772881f8d097c66a7cd1a_icgraph" alt=""/></div>
-<map name="a00035_aa6ad4d8692b772881f8d097c66a7cd1a_icgraph" id="a00035_aa6ad4d8692b772881f8d097c66a7cd1a_icgraph">
-<area shape="rect" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a87a9e44ec947fa974d1035b7775349bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a9e44ec947fa974d1035b7775349bf">&#9670;&nbsp;</a></span>WTSB_StaticCashCents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WTSB_StaticCashCents </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00012">12</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%d&quot;</span>, pSim-&gt;moneyInMachineCents);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a53e25bddf4d1510745b96f5483d0217c">H_Change_Cash_Cents</a>, bufferEdited);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00035_a87a9e44ec947fa974d1035b7775349bf_icgraph.png" border="0" usemap="#a00035_a87a9e44ec947fa974d1035b7775349bf_icgraph" alt=""/></div>
-<map name="a00035_a87a9e44ec947fa974d1035b7775349bf_icgraph" id="a00035_a87a9e44ec947fa974d1035b7775349bf_icgraph">
-<area shape="rect" title=" " alt="" coords="861,107,1027,133"/>
-<area shape="rect" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a12a95729e90d6b24accfaa464e2df3a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12a95729e90d6b24accfaa464e2df3a8">&#9670;&nbsp;</a></span>WTSB_StaticCashEuros()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WTSB_StaticCashEuros </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00020">20</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%d&quot;</span>, pSim-&gt;moneyInMachineEuros);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a054efcbb1db8ccfb8944ec33d0ecbc8d">H_Change_Cash_Euros</a>, bufferEdited);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00035_a12a95729e90d6b24accfaa464e2df3a8_icgraph.png" border="0" usemap="#a00035_a12a95729e90d6b24accfaa464e2df3a8_icgraph" alt=""/></div>
-<map name="a00035_a12a95729e90d6b24accfaa464e2df3a8_icgraph" id="a00035_a12a95729e90d6b24accfaa464e2df3a8_icgraph">
-<area shape="rect" title=" " alt="" coords="861,107,1027,133"/>
-<area shape="rect" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a81adb3eec37c8294d9bc53aefa065cec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81adb3eec37c8294d9bc53aefa065cec">&#9670;&nbsp;</a></span>WTSB_StaticChangeCents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WTSB_StaticChangeCents </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00028">28</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%d&quot;</span>, pSim-&gt;changeInMachineCents);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    SetWindowText(<a class="code" href="a00008.html#af294c092b9c78a030d091b88947335a7">H_Change_Change_Cents</a>, bufferEdited);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00035_a81adb3eec37c8294d9bc53aefa065cec_icgraph.png" border="0" usemap="#a00035_a81adb3eec37c8294d9bc53aefa065cec_icgraph" alt=""/></div>
-<map name="a00035_a81adb3eec37c8294d9bc53aefa065cec_icgraph" id="a00035_a81adb3eec37c8294d9bc53aefa065cec_icgraph">
-<area shape="rect" title=" " alt="" coords="861,107,1040,133"/>
-<area shape="rect" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ae2e7f65a5e0fe53480c08b38caf7c970"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2e7f65a5e0fe53480c08b38caf7c970">&#9670;&nbsp;</a></span>WTSB_StaticChangeEuros()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WTSB_StaticChangeEuros </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00036">36</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%d&quot;</span>, pSim-&gt;changeInMachineEuros);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a1456b20337533e5e3af7d1209f08d1dc">H_Change_Change_Euros</a>, bufferEdited);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00035_ae2e7f65a5e0fe53480c08b38caf7c970_icgraph.png" border="0" usemap="#a00035_ae2e7f65a5e0fe53480c08b38caf7c970_icgraph" alt=""/></div>
-<map name="a00035_ae2e7f65a5e0fe53480c08b38caf7c970_icgraph" id="a00035_ae2e7f65a5e0fe53480c08b38caf7c970_icgraph">
-<area shape="rect" title=" " alt="" coords="861,107,1040,133"/>
-<area shape="rect" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="aa999526dbd28df60d1cf256666c65d91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa999526dbd28df60d1cf256666c65d91">&#9670;&nbsp;</a></span>WTSB_StaticChar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WTSB_StaticChar </td>
+          <td class="memname">void WTDB_Debug </td>
           <td>(</td>
           <td class="paramtype">wchar_t&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
+          <td class="paramname"><em>inFunction</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">HWND&#160;</td>
-          <td class="paramname"><em>handler</em>&#160;</td>
+          <td class="paramtype">wchar_t&#160;</td>
+          <td class="paramname"><em>withText</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -407,96 +150,83 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Write to the Debug section in the program. Does this by copying the old buffer and adding the new lines to that buffer and writing it back</p>
 
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00004">4</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;DEBUG: %s&quot;</span>, buffer);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    SetWindowText(handler, bufferEdited);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a42f0f7f0f0cc17d92924ac7ffeec3194"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42f0f7f0f0cc17d92924ac7ffeec3194">&#9670;&nbsp;</a></span>WTSB_StaticWalletCents()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void WTSB_StaticWalletCents </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00044">44</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%d&quot;</span>, pSim-&gt;moneyInWalletCents);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a7ce2fc8e93bd6f04c5c3d9f4675117c0">H_Change_Wallet_Cents</a>, bufferEdited);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00003">3</a> of file <a class="el" href="a00035_source.html">WriteToDisplayBuffers.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">wchar_t</span> formatedbuffer[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>], buffTemp[<a class="code" href="a00038.html#aa38db5457275bf700dd1c2a40bf838a9">DEBUGBUFFER</a>];</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> lengthDebugBuff = 0;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> debugListCounter = 0;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    wsprintf(formatedbuffer, L<span class="stringliteral">&quot;[%d] %s: %s\r\n&quot;</span>, debugListCounter++, inFunction, withText);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    lengthDebugBuff = GetWindowTextLength(<a class="code" href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a>) + lstrlen(formatedbuffer) + 1;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    GetWindowText(<a class="code" href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a>, buffTemp, lengthDebugBuff);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    wcscat_s(buffTemp, lengthDebugBuff, formatedbuffer);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    SetWindowTextW(<a class="code" href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a>, buffTemp);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00035_a42f0f7f0f0cc17d92924ac7ffeec3194_icgraph.png" border="0" usemap="#a00035_a42f0f7f0f0cc17d92924ac7ffeec3194_icgraph" alt=""/></div>
-<map name="a00035_a42f0f7f0f0cc17d92924ac7ffeec3194_icgraph" id="a00035_a42f0f7f0f0cc17d92924ac7ffeec3194_icgraph">
-<area shape="rect" title=" " alt="" coords="861,107,1033,133"/>
-<area shape="rect" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
+<div class="center"><img src="a00035_ab3b640e84195a8e6831a78c8f1043f5f_icgraph.png" border="0" usemap="#a00035_ab3b640e84195a8e6831a78c8f1043f5f_icgraph" alt=""/></div>
+<map name="a00035_ab3b640e84195a8e6831a78c8f1043f5f_icgraph" id="a00035_ab3b640e84195a8e6831a78c8f1043f5f_icgraph">
+<area shape="rect" title=" " alt="" coords="799,237,903,264"/>
+<area shape="rect" href="a00002.html#a3939a486c57fff1bfad2be0495dff368" title=" " alt="" coords="301,9,508,36"/>
+<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,263,253,289"/>
+<area shape="rect" href="a00005.html#a7ece3f70824368fe571a4380ca86d705" title=" " alt="" coords="562,111,745,137"/>
+<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="341,161,468,188"/>
+<area shape="rect" href="a00002.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="326,212,483,239"/>
+<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="333,263,476,289"/>
+<area shape="rect" href="a00023.html#a5edebbe93cfe46276e112bf778baadd1" title=" " alt="" coords="319,313,491,340"/>
+<area shape="rect" href="a00023.html#a739d8f786bbcf07bd232cdb059aac9c6" title=" " alt="" coords="577,364,730,391"/>
+<area shape="rect" href="a00023.html#a8181c2a875aa7395ad48aa146ce8e0f6" title=" " alt="" coords="563,415,744,441"/>
+<area shape="rect" href="a00023.html#a6aa66eaf123ea26bd4fea7570829e960" title=" " alt="" coords="556,465,751,492"/>
+<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,263,79,289"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a49c465d0b0b0bf4dec9d99006efe6df9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49c465d0b0b0bf4dec9d99006efe6df9">&#9670;&nbsp;</a></span>WTSB_StaticWalletEuros()</h2>
+<a id="a923d061927529740f7493db16b302326"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923d061927529740f7493db16b302326">&#9670;&nbsp;</a></span>WTDB_Display()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void WTSB_StaticWalletEuros </td>
+          <td class="memname">void WTDB_Display </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00041.html">sim_t</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">wchar_t&#160;</td>
+          <td class="paramname"><em>MenuDisplayBuffer</em>[]</td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Write to display buffer of the machine for promping the user</p>
 
-<p class="definition">Definition at line <a class="el" href="a00032_source.html#l00052">52</a> of file <a class="el" href="a00032_source.html">WriteToScreenBuffer.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%d&quot;</span>, pSim-&gt;moneyInWalletEuros);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a709b0e16869eadcebb6aa010daf8916e">H_Change_Wallet_Euros</a>, bufferEdited);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="a00035_source.html#l00018">18</a> of file <a class="el" href="a00035_source.html">WriteToDisplayBuffers.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">wchar_t</span> bufferEdited[<a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    wsprintf(bufferEdited, L<span class="stringliteral">&quot;%s&quot;</span>, MenuDisplayBuffer);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    SetWindowText(<a class="code" href="a00008.html#a7b770477000e7ac49712d783cabf6c9b">H_Change_Display</a>, bufferEdited);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00035_a49c465d0b0b0bf4dec9d99006efe6df9_icgraph.png" border="0" usemap="#a00035_a49c465d0b0b0bf4dec9d99006efe6df9_icgraph" alt=""/></div>
-<map name="a00035_a49c465d0b0b0bf4dec9d99006efe6df9_icgraph" id="a00035_a49c465d0b0b0bf4dec9d99006efe6df9_icgraph">
-<area shape="rect" title=" " alt="" coords="861,107,1033,133"/>
-<area shape="rect" href="a00035.html#aa6ad4d8692b772881f8d097c66a7cd1a" title=" " alt="" coords="703,107,813,133"/>
-<area shape="rect" href="a00005.html#a20c2ec52a67deb1079f6426a9c4aa50d" title=" " alt="" coords="507,5,655,32"/>
-<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="317,81,443,108"/>
-<area shape="rect" href="a00005.html#ab316f9363930b9d9c95f1e86314d207c" title=" " alt="" coords="507,107,655,133"/>
-<area shape="rect" href="a00005.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="301,157,459,184"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="309,208,451,235"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,157,253,184"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,157,79,184"/>
+<div class="center"><img src="a00035_a923d061927529740f7493db16b302326_icgraph.png" border="0" usemap="#a00035_a923d061927529740f7493db16b302326_icgraph" alt=""/></div>
+<map name="a00035_a923d061927529740f7493db16b302326_icgraph" id="a00035_a923d061927529740f7493db16b302326_icgraph">
+<area shape="rect" title=" " alt="" coords="799,176,909,203"/>
+<area shape="rect" href="a00002.html#a3939a486c57fff1bfad2be0495dff368" title=" " alt="" coords="301,24,508,51"/>
+<area shape="rect" href="a00005.html#a7ece3f70824368fe571a4380ca86d705" title=" " alt="" coords="562,50,745,76"/>
+<area shape="rect" href="a00005.html#af8bb62a91fd31ba87c62fd889c82ebe8" title=" " alt="" coords="341,100,468,127"/>
+<area shape="rect" href="a00002.html#a86baeb7b6fbddcfa7f9bbb18d50acceb" title=" " alt="" coords="326,151,483,178"/>
+<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="333,202,476,228"/>
+<area shape="rect" href="a00023.html#a5edebbe93cfe46276e112bf778baadd1" title=" " alt="" coords="567,252,739,279"/>
+<area shape="rect" href="a00023.html#a739d8f786bbcf07bd232cdb059aac9c6" title=" " alt="" coords="577,303,730,330"/>
+<area shape="rect" href="a00023.html#a6aa66eaf123ea26bd4fea7570829e960" title=" " alt="" coords="556,354,751,380"/>
+<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,202,253,228"/>
+<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,202,79,228"/>
 </map>
 </div>
 
@@ -504,23 +234,14 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00032_html_ab9e81a4fb50ec3942b0653fb8e46c747"><div class="ttname"><a href="a00032.html#ab9e81a4fb50ec3942b0653fb8e46c747">WTSB_StaticCashEuros</a></div><div class="ttdeci">void WTSB_StaticCashEuros(sim_t *pSim)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00020">WriteToScreenBuffer.c:20</a></div></div>
-<div class="ttc" id="aa00008_html_af294c092b9c78a030d091b88947335a7"><div class="ttname"><a href="a00008.html#af294c092b9c78a030d091b88947335a7">H_Change_Change_Cents</a></div><div class="ttdeci">HWND H_Change_Change_Cents</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00050">ColaVendingMachineGui.h:50</a></div></div>
-<div class="ttc" id="aa00032_html_a6e13b8af19c79cf451b5500ce75420a6"><div class="ttname"><a href="a00032.html#a6e13b8af19c79cf451b5500ce75420a6">WTSB_StaticWalletCents</a></div><div class="ttdeci">void WTSB_StaticWalletCents(sim_t *pSim)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00044">WriteToScreenBuffer.c:44</a></div></div>
-<div class="ttc" id="aa00032_html_acd94f0b7a1c4ad9e4bf366e06b6042fb"><div class="ttname"><a href="a00032.html#acd94f0b7a1c4ad9e4bf366e06b6042fb">WTSB_StaticChangeCents</a></div><div class="ttdeci">void WTSB_StaticChangeCents(sim_t *pSim)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00028">WriteToScreenBuffer.c:28</a></div></div>
+<div class="ttc" id="aa00008_html_ad859b2dc1b112b864807e9e22728150b"><div class="ttname"><a href="a00008.html#ad859b2dc1b112b864807e9e22728150b">H_Change_Debug</a></div><div class="ttdeci">HWND H_Change_Debug</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00046">ColaVendingMachineGui.h:46</a></div></div>
 <div class="ttc" id="aa00008_html_a39912bfe2a55f30e269196f9141d845d"><div class="ttname"><a href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a></div><div class="ttdeci">#define BUFFSIZE</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00004">ColaVendingMachineGui.h:4</a></div></div>
-<div class="ttc" id="aa00008_html_a53e25bddf4d1510745b96f5483d0217c"><div class="ttname"><a href="a00008.html#a53e25bddf4d1510745b96f5483d0217c">H_Change_Cash_Cents</a></div><div class="ttdeci">HWND H_Change_Cash_Cents</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00050">ColaVendingMachineGui.h:50</a></div></div>
-<div class="ttc" id="aa00032_html_a0a0036ec3f45acade69e0acba4a9f43d"><div class="ttname"><a href="a00032.html#a0a0036ec3f45acade69e0acba4a9f43d">WTSB_StaticWalletEuros</a></div><div class="ttdeci">void WTSB_StaticWalletEuros(sim_t *pSim)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00052">WriteToScreenBuffer.c:52</a></div></div>
-<div class="ttc" id="aa00008_html_a054efcbb1db8ccfb8944ec33d0ecbc8d"><div class="ttname"><a href="a00008.html#a054efcbb1db8ccfb8944ec33d0ecbc8d">H_Change_Cash_Euros</a></div><div class="ttdeci">HWND H_Change_Cash_Euros</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00050">ColaVendingMachineGui.h:50</a></div></div>
-<div class="ttc" id="aa00008_html_a709b0e16869eadcebb6aa010daf8916e"><div class="ttname"><a href="a00008.html#a709b0e16869eadcebb6aa010daf8916e">H_Change_Wallet_Euros</a></div><div class="ttdeci">HWND H_Change_Wallet_Euros</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00050">ColaVendingMachineGui.h:50</a></div></div>
-<div class="ttc" id="aa00032_html_a09c94b2738d97d78ae15fd632f4d7e58"><div class="ttname"><a href="a00032.html#a09c94b2738d97d78ae15fd632f4d7e58">WTSB_StaticCashCents</a></div><div class="ttdeci">void WTSB_StaticCashCents(sim_t *pSim)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00012">WriteToScreenBuffer.c:12</a></div></div>
-<div class="ttc" id="aa00032_html_ac178cf969810bd21440deb5672d188b4"><div class="ttname"><a href="a00032.html#ac178cf969810bd21440deb5672d188b4">WTSB_StaticChangeEuros</a></div><div class="ttdeci">void WTSB_StaticChangeEuros(sim_t *pSim)</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00036">WriteToScreenBuffer.c:36</a></div></div>
-<div class="ttc" id="aa00008_html_a1456b20337533e5e3af7d1209f08d1dc"><div class="ttname"><a href="a00008.html#a1456b20337533e5e3af7d1209f08d1dc">H_Change_Change_Euros</a></div><div class="ttdeci">HWND H_Change_Change_Euros</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00050">ColaVendingMachineGui.h:50</a></div></div>
-<div class="ttc" id="aa00008_html_a7ce2fc8e93bd6f04c5c3d9f4675117c0"><div class="ttname"><a href="a00008.html#a7ce2fc8e93bd6f04c5c3d9f4675117c0">H_Change_Wallet_Cents</a></div><div class="ttdeci">HWND H_Change_Wallet_Cents</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00050">ColaVendingMachineGui.h:50</a></div></div>
+<div class="ttc" id="aa00038_html_aa38db5457275bf700dd1c2a40bf838a9"><div class="ttname"><a href="a00038.html#aa38db5457275bf700dd1c2a40bf838a9">DEBUGBUFFER</a></div><div class="ttdeci">#define DEBUGBUFFER</div><div class="ttdef"><b>Definition:</b> <a href="a00038_source.html#l00011">WriteToDisplayBuffers.h:11</a></div></div>
+<div class="ttc" id="aa00008_html_a7b770477000e7ac49712d783cabf6c9b"><div class="ttname"><a href="a00008.html#a7b770477000e7ac49712d783cabf6c9b">H_Change_Display</a></div><div class="ttdeci">HWND H_Change_Display</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00046">ColaVendingMachineGui.h:46</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_daaf0645d7aba630447153f324bee2a3.html">ColaVendingMachineGui</a></li><li class="navelem"><a class="el" href="a00035.html">WriteToScreenBuffer.h</a></li>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_daaf0645d7aba630447153f324bee2a3.html">ColaVendingMachineGui</a></li><li class="navelem"><a class="el" href="a00035.html">WriteToDisplayBuffers.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

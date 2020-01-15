@@ -14,7 +14,7 @@ void WTSB_StaticChange(sim_t* pSim)
 	/// Display amount of money you have to Change buffer
 	wchar_t bufferEdited[BUFFSIZE];
 
-	swprintf(bufferEdited, BUFFSIZE, L"\u20AC%.2f", (double)pSim->changeInMachine / 100.0);
+	swprintf(bufferEdited, BUFFSIZE, L"\u20AC%.2f", (double)pSim->changeInMachine / 100);
 	SetWindowText(H_Change_Change, bufferEdited);
 }
 

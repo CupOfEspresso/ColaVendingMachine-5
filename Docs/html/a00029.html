@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Cola Vending Machine 5: UserDrinkSelection.h File Reference</title>
+<title>Cola Vending Machine 5: UserDrinkSelection.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,192 +88,44 @@ $(document).ready(function(){initNavTree('a00029.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">UserDrinkSelection.h File Reference</div>  </div>
+<div class="title">UserDrinkSelection.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00008_source.html">ColaVendingMachineGui.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00014_source.html">Initialization.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00005_source.html">CoinHandelingProcedure.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00035_source.html">WriteToScreenBuffer.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00032_source.html">UserDrinkSelection.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00008_source.html">ColaVendingMachineGui.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for UserDrinkSelection.h:</div>
+Include dependency graph for UserDrinkSelection.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00030.png" border="0" usemap="#_user_drink_selection_8h" alt=""/></div>
-<map name="_user_drink_selection_8h" id="_user_drink_selection_8h">
-<area shape="rect" title=" " alt="" coords="260,5,404,32"/>
-<area shape="rect" href="a00008.html" title=" " alt="" coords="244,80,419,107"/>
-<area shape="rect" href="a00014.html" title=" " alt="" coords="482,379,584,405"/>
-<area shape="rect" href="a00005.html" title=" " alt="" coords="155,304,330,331"/>
-<area shape="rect" href="a00035.html" title=" " alt="" coords="34,229,186,256"/>
-<area shape="rect" title=" " alt="" coords="354,304,440,331"/>
-<area shape="rect" title=" " alt="" coords="570,229,634,256"/>
-<area shape="rect" title=" " alt="" coords="658,229,720,256"/>
-<area shape="rect" title=" " alt="" coords="336,229,394,256"/>
-<area shape="rect" href="a00023.html" title=" " alt="" coords="387,155,527,181"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00031.png" border="0" usemap="#_user_drink_selection_8hdep" alt=""/></div>
-<map name="_user_drink_selection_8hdep" id="_user_drink_selection_8hdep">
-<area shape="rect" title=" " alt="" coords="297,5,441,32"/>
-<area shape="rect" href="a00014.html" title=" " alt="" coords="319,80,420,107"/>
-<area shape="rect" href="a00008.html" title=" " alt="" coords="457,155,631,181"/>
-<area shape="rect" href="a00005.html" title=" " alt="" coords="233,229,407,256"/>
-<area shape="rect" href="a00035.html" title=" " alt="" coords="5,304,157,331"/>
-<area shape="rect" href="a00023.html" title=" " alt="" coords="445,379,585,405"/>
-<area shape="rect" href="a00026.html" title=" " alt="" coords="717,229,861,256"/>
-<area shape="rect" href="a00011.html" title=" " alt="" coords="205,155,307,181"/>
-<area shape="rect" href="a00002.html" title=" " alt="" coords="401,304,575,331"/>
-<area shape="rect" href="a00017.html" title=" " alt="" coords="507,229,568,256"/>
-<area shape="rect" href="a00032.html" title=" " alt="" coords="5,379,157,405"/>
-<area shape="rect" href="a00020.html" title=" " alt="" coords="445,453,585,480"/>
+<div class="center"><img src="a00030.png" border="0" usemap="#_user_drink_selection_8c" alt=""/></div>
+<map name="_user_drink_selection_8c" id="_user_drink_selection_8c">
+<area shape="rect" title=" " alt="" coords="257,5,401,32"/>
+<area shape="rect" href="a00032.html" title=" " alt="" coords="187,80,331,107"/>
+<area shape="rect" href="a00008.html" title=" " alt="" coords="383,155,558,181"/>
+<area shape="rect" href="a00014.html" title=" " alt="" coords="208,229,309,256"/>
+<area shape="rect" href="a00005.html" title=" " alt="" coords="130,528,305,555"/>
+<area shape="rect" href="a00044.html" title=" " alt="" coords="456,453,608,480"/>
+<area shape="rect" href="a00038.html" title=" " alt="" coords="193,304,354,331"/>
+<area shape="rect" title=" " alt="" coords="631,528,718,555"/>
+<area shape="rect" title=" " alt="" coords="557,229,621,256"/>
+<area shape="rect" title=" " alt="" coords="645,229,707,256"/>
+<area shape="rect" title=" " alt="" coords="856,229,915,256"/>
+<area shape="rect" href="a00023.html" title=" " alt="" coords="342,379,482,405"/>
+<area shape="rect" href="a00026.html" title=" " alt="" coords="939,229,1021,256"/>
 </map>
 </div>
 </div>
 <p><a href="a00029_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00045.html">drink_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a624fd5af921a5266e2d0304a645298ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a624fd5af921a5266e2d0304a645298ba">BUFF</a>&#160;&#160;&#160;128</td></tr>
-<tr class="separator:a624fd5af921a5266e2d0304a645298ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a44cc03fa6010f35b4694817519c4f0b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a44cc03fa6010f35b4694817519c4f0b1">UDS_Price</a> (<a class="el" href="a00045.html">drink_t</a> *, int)</td></tr>
-<tr class="separator:a44cc03fa6010f35b4694817519c4f0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0046cd4e682590cf4448044d06b6755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#ab0046cd4e682590cf4448044d06b6755">UDS_Drink</a> (<a class="el" href="a00045.html">drink_t</a> *, wchar_t whichDrink[])</td></tr>
-<tr class="separator:ab0046cd4e682590cf4448044d06b6755"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3a1197ab5e53c8f17cb5fb050fad32d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#ab3a1197ab5e53c8f17cb5fb050fad32d">UDS_Setup</a> (int, <a class="el" href="a00045.html">drink_t</a> *)</td></tr>
-<tr class="separator:ab3a1197ab5e53c8f17cb5fb050fad32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d234147bddeca54c9767a0ed0817545"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00029.html#a4d234147bddeca54c9767a0ed0817545">UDS_Setup</a> (int D_Name, <a class="el" href="a00058.html">drink_t</a> *pDrink)</td></tr>
+<tr class="separator:a4d234147bddeca54c9767a0ed0817545"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a624fd5af921a5266e2d0304a645298ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a624fd5af921a5266e2d0304a645298ba">&#9670;&nbsp;</a></span>BUFF</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUFF&#160;&#160;&#160;128</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00029_source.html#l00004">4</a> of file <a class="el" href="a00029_source.html">UserDrinkSelection.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab0046cd4e682590cf4448044d06b6755"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0046cd4e682590cf4448044d06b6755">&#9670;&nbsp;</a></span>UDS_Drink()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void UDS_Drink </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00045.html">drink_t</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">wchar_t&#160;</td>
-          <td class="paramname"><em>whichDrink</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00026_source.html#l00017">17</a> of file <a class="el" href="a00026_source.html">UserDrinkSelection.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    wcscpy_s(pDrink-&gt;drinkName, <a class="code" href="a00029.html#a624fd5af921a5266e2d0304a645298ba">BUFF</a>, whichDrink);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00029_ab0046cd4e682590cf4448044d06b6755_icgraph.png" border="0" usemap="#a00029_ab0046cd4e682590cf4448044d06b6755_icgraph" alt=""/></div>
-<map name="a00029_ab0046cd4e682590cf4448044d06b6755_icgraph" id="a00029_ab0046cd4e682590cf4448044d06b6755_icgraph">
-<area shape="rect" title=" " alt="" coords="631,5,717,32"/>
-<area shape="rect" href="a00029.html#ab3a1197ab5e53c8f17cb5fb050fad32d" title=" " alt="" coords="492,5,583,32"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="301,5,444,32"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,5,253,32"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,5,79,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a44cc03fa6010f35b4694817519c4f0b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44cc03fa6010f35b4694817519c4f0b1">&#9670;&nbsp;</a></span>UDS_Price()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void UDS_Price </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00045.html">drink_t</a> *&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00026_source.html#l00005">5</a> of file <a class="el" href="a00026_source.html">UserDrinkSelection.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    pDrink-&gt;priceTotaalCents = priceTotaal;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">while</span> (priceTotaal &gt;= 100)</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        priceTotaal -= 100;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        pDrink-&gt;priceInEuros++;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    pDrink-&gt;priceInCents = priceTotaal;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-</div><!-- fragment --><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00029_a44cc03fa6010f35b4694817519c4f0b1_icgraph.png" border="0" usemap="#a00029_a44cc03fa6010f35b4694817519c4f0b1_icgraph" alt=""/></div>
-<map name="a00029_a44cc03fa6010f35b4694817519c4f0b1_icgraph" id="a00029_a44cc03fa6010f35b4694817519c4f0b1_icgraph">
-<area shape="rect" title=" " alt="" coords="631,5,717,32"/>
-<area shape="rect" href="a00029.html#ab3a1197ab5e53c8f17cb5fb050fad32d" title=" " alt="" coords="492,5,583,32"/>
-<area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="301,5,444,32"/>
-<area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,5,253,32"/>
-<area shape="rect" href="a00017.html#a8cd7c5c724e6b18e03e7ba99a7d633b6" title=" " alt="" coords="5,5,79,32"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="ab3a1197ab5e53c8f17cb5fb050fad32d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3a1197ab5e53c8f17cb5fb050fad32d">&#9670;&nbsp;</a></span>UDS_Setup()</h2>
+<a id="a4d234147bddeca54c9767a0ed0817545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d234147bddeca54c9767a0ed0817545">&#9670;&nbsp;</a></span>UDS_Setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,13 +134,13 @@ Here is the caller graph for this function:</div>
           <td class="memname">void UDS_Setup </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>D_Name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00045.html">drink_t</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramtype"><a class="el" href="a00058.html">drink_t</a> *&#160;</td>
+          <td class="paramname"><em>pDrink</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -297,53 +149,42 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the right varables depending on which button you pressed</p>
 
-<p class="definition">Definition at line <a class="el" href="a00026_source.html#l00022">22</a> of file <a class="el" href="a00026_source.html">UserDrinkSelection.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">switch</span> (D_Name) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a3662ecd6a5e958c69e3325422edf55de">D_COLA</a>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a>(pDrink, L<span class="stringliteral">&quot;Cola&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a>(pDrink, 250);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#a99fb83031ce9923c84392b4e92f956b5aa825e3a77ce929d1fdee2e373869dfa7">D_PEPSI</a>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a>(pDrink, L<span class="stringliteral">&quot;Pepsi&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a>(pDrink, 230);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a067a2ed269e0dd74a344773f245925ae">D_FANTA</a>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a>(pDrink, L<span class="stringliteral">&quot;Fanta&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a>(pDrink, 240);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a2ca40e686a96086a85a1c90d06a7582d">D_ICE_TEA</a>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a>(pDrink, L<span class="stringliteral">&quot;Ice Tea&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a>(pDrink, 270);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a67d7aa121b3d5a005782f82c9d071715">D_SPRITE</a>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a>(pDrink, L<span class="stringliteral">&quot;Sprite&quot;</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a>(pDrink, 260);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a02f27a0783883aaf91b198e803febdfd">D_SPA</a>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a>(pDrink, L<span class="stringliteral">&quot;Spa&quot;</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a>(pDrink, 220);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="a00029_source.html#l00004">4</a> of file <a class="el" href="a00029_source.html">UserDrinkSelection.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">switch</span> (D_Name) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a3662ecd6a5e958c69e3325422edf55de">D_COLA</a>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        wcscpy_s(pDrink-&gt;<a class="code" href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drinkName</a>, <a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>, L<span class="stringliteral">&quot;Cola&quot;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        pDrink-&gt;<a class="code" href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">priceTotaalCents</a> = 250;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7aa825e3a77ce929d1fdee2e373869dfa7">D_PEPSI</a>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        wcscpy_s(pDrink-&gt;<a class="code" href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drinkName</a>, <a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>, L<span class="stringliteral">&quot;Pepsi&quot;</span>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        pDrink-&gt;<a class="code" href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">priceTotaalCents</a> = 230;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a067a2ed269e0dd74a344773f245925ae">D_FANTA</a>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        wcscpy_s(pDrink-&gt;<a class="code" href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drinkName</a>, <a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>, L<span class="stringliteral">&quot;Fanta&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        pDrink-&gt;<a class="code" href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">priceTotaalCents</a> = 240;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a2ca40e686a96086a85a1c90d06a7582d">D_ICE_TEA</a>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        wcscpy_s(pDrink-&gt;<a class="code" href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drinkName</a>, <a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>, L<span class="stringliteral">&quot;Ice Tea&quot;</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        pDrink-&gt;<a class="code" href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">priceTotaalCents</a> = 270;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a67d7aa121b3d5a005782f82c9d071715">D_SPRITE</a>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        wcscpy_s(pDrink-&gt;<a class="code" href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drinkName</a>, <a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>, L<span class="stringliteral">&quot;Sprite&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        pDrink-&gt;<a class="code" href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">priceTotaalCents</a> = 260;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a02f27a0783883aaf91b198e803febdfd">D_SPA</a>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        wcscpy_s(pDrink-&gt;<a class="code" href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drinkName</a>, <a class="code" href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a>, L<span class="stringliteral">&quot;Spa&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        pDrink-&gt;<a class="code" href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">priceTotaalCents</a> = 220;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_cgraph.png" border="0" usemap="#a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_cgraph" alt=""/></div>
-<map name="a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_cgraph" id="a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,96,57"/>
-<area shape="rect" href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24" title=" " alt="" coords="144,5,231,32"/>
-<area shape="rect" href="a00026.html#a31b45ebf460b4fe60c045677a52660a5" title=" " alt="" coords="144,56,231,83"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_icgraph.png" border="0" usemap="#a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_icgraph" alt=""/></div>
-<map name="a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_icgraph" id="a00029_ab3a1197ab5e53c8f17cb5fb050fad32d_icgraph">
+<div class="center"><img src="a00029_a4d234147bddeca54c9767a0ed0817545_icgraph.png" border="0" usemap="#a00029_a4d234147bddeca54c9767a0ed0817545_icgraph" alt=""/></div>
+<map name="a00029_a4d234147bddeca54c9767a0ed0817545_icgraph" id="a00029_a4d234147bddeca54c9767a0ed0817545_icgraph">
 <area shape="rect" title=" " alt="" coords="492,5,583,32"/>
 <area shape="rect" href="a00005.html#a62de0081174d2608ae18916858847081" title=" " alt="" coords="301,5,444,32"/>
 <area shape="rect" href="a00017.html#aeead82a039c5b5f5a728abc811126568" title=" " alt="" coords="127,5,253,32"/>
@@ -355,19 +196,19 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aa00008_html_a99fb83031ce9923c84392b4e92f956b5a2ca40e686a96086a85a1c90d06a7582d"><div class="ttname"><a href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a2ca40e686a96086a85a1c90d06a7582d">D_ICE_TEA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00044">ColaVendingMachineGui.h:44</a></div></div>
-<div class="ttc" id="aa00029_html_a624fd5af921a5266e2d0304a645298ba"><div class="ttname"><a href="a00029.html#a624fd5af921a5266e2d0304a645298ba">BUFF</a></div><div class="ttdeci">#define BUFF</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00004">UserDrinkSelection.h:4</a></div></div>
-<div class="ttc" id="aa00008_html_a99fb83031ce9923c84392b4e92f956b5a02f27a0783883aaf91b198e803febdfd"><div class="ttname"><a href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a02f27a0783883aaf91b198e803febdfd">D_SPA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00044">ColaVendingMachineGui.h:44</a></div></div>
-<div class="ttc" id="aa00008_html_a99fb83031ce9923c84392b4e92f956b5a67d7aa121b3d5a005782f82c9d071715"><div class="ttname"><a href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a67d7aa121b3d5a005782f82c9d071715">D_SPRITE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00044">ColaVendingMachineGui.h:44</a></div></div>
-<div class="ttc" id="aa00008_html_a99fb83031ce9923c84392b4e92f956b5aa825e3a77ce929d1fdee2e373869dfa7"><div class="ttname"><a href="a00008.html#a99fb83031ce9923c84392b4e92f956b5aa825e3a77ce929d1fdee2e373869dfa7">D_PEPSI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00044">ColaVendingMachineGui.h:44</a></div></div>
-<div class="ttc" id="aa00008_html_a99fb83031ce9923c84392b4e92f956b5a3662ecd6a5e958c69e3325422edf55de"><div class="ttname"><a href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a3662ecd6a5e958c69e3325422edf55de">D_COLA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00044">ColaVendingMachineGui.h:44</a></div></div>
-<div class="ttc" id="aa00026_html_a16cdf27bfd0bf7646f2d3c81b4556e24"><div class="ttname"><a href="a00026.html#a16cdf27bfd0bf7646f2d3c81b4556e24">UDS_Drink</a></div><div class="ttdeci">void UDS_Drink(drink_t *pDrink, wchar_t whichDrink[])</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00017">UserDrinkSelection.c:17</a></div></div>
-<div class="ttc" id="aa00008_html_a99fb83031ce9923c84392b4e92f956b5a067a2ed269e0dd74a344773f245925ae"><div class="ttname"><a href="a00008.html#a99fb83031ce9923c84392b4e92f956b5a067a2ed269e0dd74a344773f245925ae">D_FANTA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00044">ColaVendingMachineGui.h:44</a></div></div>
-<div class="ttc" id="aa00026_html_a31b45ebf460b4fe60c045677a52660a5"><div class="ttname"><a href="a00026.html#a31b45ebf460b4fe60c045677a52660a5">UDS_Price</a></div><div class="ttdeci">void UDS_Price(drink_t *pDrink, int priceTotaal)</div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00005">UserDrinkSelection.c:5</a></div></div>
+<div class="ttc" id="aa00008_html_adf764cbdea00d65edcd07bb9953ad2b7a2ca40e686a96086a85a1c90d06a7582d"><div class="ttname"><a href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a2ca40e686a96086a85a1c90d06a7582d">D_ICE_TEA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00041">ColaVendingMachineGui.h:41</a></div></div>
+<div class="ttc" id="aa00008_html_adf764cbdea00d65edcd07bb9953ad2b7aa825e3a77ce929d1fdee2e373869dfa7"><div class="ttname"><a href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7aa825e3a77ce929d1fdee2e373869dfa7">D_PEPSI</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00041">ColaVendingMachineGui.h:41</a></div></div>
+<div class="ttc" id="aa00008_html_adf764cbdea00d65edcd07bb9953ad2b7a67d7aa121b3d5a005782f82c9d071715"><div class="ttname"><a href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a67d7aa121b3d5a005782f82c9d071715">D_SPRITE</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00041">ColaVendingMachineGui.h:41</a></div></div>
+<div class="ttc" id="aa00008_html_adf764cbdea00d65edcd07bb9953ad2b7a067a2ed269e0dd74a344773f245925ae"><div class="ttname"><a href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a067a2ed269e0dd74a344773f245925ae">D_FANTA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00041">ColaVendingMachineGui.h:41</a></div></div>
+<div class="ttc" id="aa00058_html_a0c214ed59b8a7ee027ccd51ff720126e"><div class="ttname"><a href="a00058.html#a0c214ed59b8a7ee027ccd51ff720126e">drink_t::priceTotaalCents</a></div><div class="ttdeci">int priceTotaalCents</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00012">UserDrinkSelection.h:12</a></div></div>
+<div class="ttc" id="aa00008_html_a39912bfe2a55f30e269196f9141d845d"><div class="ttname"><a href="a00008.html#a39912bfe2a55f30e269196f9141d845d">BUFFSIZE</a></div><div class="ttdeci">#define BUFFSIZE</div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00004">ColaVendingMachineGui.h:4</a></div></div>
+<div class="ttc" id="aa00008_html_adf764cbdea00d65edcd07bb9953ad2b7a3662ecd6a5e958c69e3325422edf55de"><div class="ttname"><a href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a3662ecd6a5e958c69e3325422edf55de">D_COLA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00041">ColaVendingMachineGui.h:41</a></div></div>
+<div class="ttc" id="aa00058_html_a0562c049018394c54bc5f2b8dc1a9ca0"><div class="ttname"><a href="a00058.html#a0562c049018394c54bc5f2b8dc1a9ca0">drink_t::drinkName</a></div><div class="ttdeci">wchar_t drinkName[BUFFSIZE]</div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00011">UserDrinkSelection.h:11</a></div></div>
+<div class="ttc" id="aa00008_html_adf764cbdea00d65edcd07bb9953ad2b7a02f27a0783883aaf91b198e803febdfd"><div class="ttname"><a href="a00008.html#adf764cbdea00d65edcd07bb9953ad2b7a02f27a0783883aaf91b198e803febdfd">D_SPA</a></div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00041">ColaVendingMachineGui.h:41</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_daaf0645d7aba630447153f324bee2a3.html">ColaVendingMachineGui</a></li><li class="navelem"><a class="el" href="a00029.html">UserDrinkSelection.h</a></li>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_daaf0645d7aba630447153f324bee2a3.html">ColaVendingMachineGui</a></li><li class="navelem"><a class="el" href="a00029.html">UserDrinkSelection.c</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>

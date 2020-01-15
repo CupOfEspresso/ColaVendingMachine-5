@@ -8,8 +8,11 @@ var files_dup =
     [ "main.c", "a00017.html", "a00017" ],
     [ "PayWithDebitCard.c", "a00020.html", "a00020" ],
     [ "PayWithDebitCard.h", "a00023.html", "a00023" ],
-    [ "UserDrinkSelection.c", "a00026.html", "a00026" ],
-    [ "UserDrinkSelection.h", "a00029.html", "a00029" ],
-    [ "WriteToScreenBuffer.c", "a00032.html", "a00032" ],
-    [ "WriteToScreenBuffer.h", "a00035.html", "a00035" ]
+    [ "resource.h", "a00026.html", "a00026" ],
+    [ "UserDrinkSelection.c", "a00029.html", "a00029" ],
+    [ "UserDrinkSelection.h", "a00032.html", "a00032" ],
+    [ "WriteToDisplayBuffers.c", "a00035.html", "a00035" ],
+    [ "WriteToDisplayBuffers.h", "a00038.html", "a00038" ],
+    [ "WriteToScreenBuffer.c", "a00041.html", "a00041" ],
+    [ "WriteToScreenBuffer.h", "a00044.html", "a00044" ]
 ];
