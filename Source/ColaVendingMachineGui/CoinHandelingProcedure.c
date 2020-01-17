@@ -14,7 +14,7 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 	{
 		if (pSim->moneyInMachine >= drinks.priceTotaalCents)
 		{
-			WTDB_Debug(L"CHP_CheckIfEnough", L"Was sufficent amount pay for drink");
+			WTDB_Debug(L"CHP_CheckIfEnough", L"Was sufficient amount pay for drink");
 			pSim->moneyInMachine -= drinks.priceTotaalCents;
 			pSim->changeInMachine = pSim->moneyInMachine;
 			pSim->moneyInMachine = 0;
@@ -22,13 +22,13 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 			WTSB_Redraw(pSim);
 
 			WTDB_Debug(L"CHP_CheckIfEnough", L"Drink dispensed");
-			wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+			wsprintf(bufferEdited, L"Enjoy your %s", drinks.drinkName);
 			WTDB_Display(bufferEdited);
 
 		}
 		else
 		{
-			WTDB_Debug(L"CHP_CheckIfEnough", L"Wasn't sufficent amount pay for drink");
+			WTDB_Debug(L"CHP_CheckIfEnough", L"Wasn't sufficient amount pay for drink");
 			swprintf(bufferEdited, 128, L"Sorry, your %s is \u20ac%.2f you have only inserted \u20ac%.2f", drinks.drinkName, (double)drinks.priceTotaalCents / 100, (double)pSim->moneyInMachine / 100);
 			WTDB_Display(bufferEdited);
 		}
@@ -42,7 +42,7 @@ void CHP_CheckIfEnough(sim_t* pSim, int whichDrink, HWND H_Window)
 		WTSB_Redraw(pSim);
 
 		WTDB_Debug(L"CHP_CheckIfEnough", L"Drink dispensed");
-		wsprintf(bufferEdited, L"Enjoy you %s", drinks.drinkName);
+		wsprintf(bufferEdited, L"Enjoy your %s", drinks.drinkName);
 		WTDB_Display(bufferEdited);
 
 		pSim->hasPaid = 0;
@@ -59,7 +59,7 @@ void CHP_CheckCoins(sim_t* pSim, int money)
 		CHP_CalculateValueOfCoin(pSim, money);
 		WTDB_Debug(L"CHP_CheckCoins", L"Screenbuffer is changed");
 
-		swprintf(bufferEdited, 128, L"Inserted \u20AC%.2f currently in th machine is \u20AC%.2f", (double)money / 100, (double)pSim->moneyInMachine / 100);
+		swprintf(bufferEdited, 128, L"Inserted \u20AC%.2f currently in the machine is \u20AC%.2f", (double)money / 100, (double)pSim->moneyInMachine / 100);
 		WTDB_Display(bufferEdited);
 		WTSB_Redraw(pSim);
 	}
@@ -107,7 +107,7 @@ void CHP_ChangeHandeling(sim_t* pSim)
 			WTDB_Debug(L"CHP_ChangeHandeling", L"donating authorized by users");
 			WTDB_Debug(L"CHP_ChangeHandeling", L"donate complete");
 			pSim->changeInMachine;
-			WTDB_Display(L"Thank you for your donation");
+			WTDB_Display(L"Thank your for your donation");
 			pSim->changeInMachine = 0;
 			WTSB_Redraw(pSim);
 		}
