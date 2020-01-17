@@ -28,6 +28,7 @@ link UserDrinkSelection to Hardware IO--><path d="M830,337.9841 C813.191,357.070
 link WriteToScreenbuffer to Hardware IO--><path d="M668,337.9841 C684.809,357.0701 712.083,388.0367 730.277,408.6943 " fill="none" id="WriteToScreenbuffer-&gt;Hardware IO" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="733.789,412.6817,730.8411,403.2844,730.4838,408.9299,724.8383,408.5727,733.789,412.6817" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[c8cfaefd150e42cc0ba791bbc78de7c4]
 link Initialization to Hardware IO--><path d="M512.465,338.0151 C524.949,345.9311 540.406,355.0851 555,361.9531 C599.658,382.9692 652.679,401.123 691.997,413.374 " fill="none" id="Initialization-&gt;Hardware IO" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="697.208,414.9882,689.7952,408.5036,692.432,413.5083,687.4273,416.1451,697.208,414.9882" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[bb1ee6cda9025b9e11e5d2bb63c979d7]
 link AppendToDisplayBuffers to Hardware IO--><path d="M141.498,337.9631 C162.991,346.3621 190.051,355.9551 215,361.9531 C385.729,403.0016 593.496,420.4252 691.968,426.791 " fill="none" id="AppendToDisplayBuffers-&gt;Hardware IO" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="697.148,427.1221,688.4211,422.5568,692.1582,426.8036,687.9114,430.5406,697.148,427.1221" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[fcbedfd826372a29232820e768dfdf8f]
+<<<<<<< HEAD
 @startuml
 
 
@@ -72,6 +73,52 @@ package "Hardware Abstraction Layer" {
 [Initialization] -down-> [Hardware IO]
 [AppendToDisplayBuffers] -down-> [Hardware IO]
 @enduml
+=======
+@startuml
+
+
+title Cola Vending Machine 5 GUI Edition
+
+package "User Interface Layer" {
+    [Display]
+    [Mouse]
+}
+
+package "System Control Layer" {
+    [Windowprocedure] #Cyan
+}
+
+package "Subsystems Layer" {
+    [CoinHandelingProcedure]
+    [PayWithDebitCard]
+    [UserDrinkSelection]
+    [WriteToScreenbuffer]
+    [Initialization]
+    [WriteToDisplayBuffers]
+}
+
+package "Hardware Abstraction Layer" {
+    [Hardware IO]
+}
+
+[Windowprocedure] -up-> [Mouse]
+[Windowprocedure] -up-> [Display]
+
+[Windowprocedure] -down-> [CoinHandelingProcedure]
+[Windowprocedure] -down-> [PayWithDebitCard]
+[Windowprocedure] -down-> [UserDrinkSelection]
+[Windowprocedure] -down-> [WriteToScreenbuffer]
+[Windowprocedure] -down-> [Initialization]
+[Windowprocedure] -down-> [AppendToDisplayBuffers]
+
+[CoinHandelingProcedure] -down-> [Hardware IO]
+[PayWithDebitCard] -down-> [Hardware IO]
+[UserDrinkSelection] -down-> [Hardware IO]
+[WriteToScreenbuffer] -down-> [Hardware IO]
+[Initialization] -down-> [Hardware IO]
+[AppendToDisplayBuffers] -down-> [Hardware IO]
+@enduml
+>>>>>>> 1f39ac6ab5967008155b12d34ad08605abdcf2be
 
 PlantUML version 1.2020.00(Sat Jan 11 12:30:53 UTC 2020)
 (GPL source distribution)

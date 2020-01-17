@@ -29,6 +29,7 @@ link WM_COMMAND to CM_MENU_ITEM_ADMIN--><path d="M1729.83,515.7781 C1648.68,519.
 link CM_MENU_ITEM_ADMIN to WM_COMMAND--><path d="M1578.54,643.5921 C1634.19,637.9711 1704.12,622.9791 1754.5,584.9531 C1768.32,574.5251 1777.86,557.7111 1784.05,543.0631 " fill="none" id="CM_MENU_ITEM_ADMIN-&gt;WM_COMMAND" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1786.02,538.1911,1778.94,545.0375,1784.1471,542.8271,1786.3575,548.0342,1786.02,538.1911" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="204" x="1771.5" y="581.02">WTDB_Debug()/ WTDB_Display()</text><!--MD5=[bb25d6ed9e70287a2d73e5490d40f753]
 link CM_MENU_ITEM_ADMIN to WM_COMMAND--><path d="M1396.49,641.7711 C1316.65,634.8621 1219.61,616.5411 1263.5,567.9531 C1293.88,534.3251 1588.36,520.5371 1724.77,515.9211 " fill="none" id="CM_MENU_ITEM_ADMIN-&gt;WM_COMMAND-1" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="1729.95,515.7471,1720.8288,512.0319,1724.9525,515.9042,1721.0801,520.0279,1729.95,515.7471" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="204" x="1264.5" y="581.02">WTDB_Debug()/ WTDB_Display()</text><!--MD5=[6ab05012e162414f039dd4f921027586]
 link WM_COMMAND to CM_MENU_ITEM_AUTHOR--><path d="M1857.16,522.3891 C1910.98,530.9261 1982.16,546.0101 2000.5,567.9531 C2011.53,581.1541 2013.12,600.3901 2011.9,616.4561 " fill="none" id="WM_COMMAND-&gt;CM_MENU_ITEM_AUTHOR" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="2011.39,621.7691,2016.234,613.1938,2011.8691,616.7921,2008.2708,612.4273,2011.39,621.7691" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="188" x="2010.5" y="581.02">Displaying system infomation</text><!--MD5=[a79ff640d507c0a81b75f7cea1d81f48]
+<<<<<<< HEAD
 @startuml
 
 
@@ -101,6 +102,80 @@ note top of WM_COMMAND #lime
     I have simplified it to the base Commands.
 end note
 @enduml
+=======
+@startuml
+
+
+title Windowprocedure Cola Vending Machine 5 GUI Edition
+
+[*] - -> Initialised : Wm_CREATE, WM_PAINT, WM_CTLCOLORSTATIC / INIT_Button(), INIT_Static, INIT_Menu, INIT_Edit
+
+Initialised : sim_t simulation
+Initialised : ~*pSim = &simulation
+Initialised : pSim->moneyInWallet = (rand() % 5000 + 500)
+Initialised : pSim->moneyInAccount = (rand() % 100000)	
+Initialised : pSim->changeInMachine = change				
+Initialised : pSim->moneyInMachine = 0					
+Initialised : pSim->isDebitCardEntered = 0					
+Initialised : pSim->postionInCardCode = 0					
+Initialised : pSim->hasPaid = 0                   
+Initialised : pSim->debitCardCode[4] = {0, 0, 0, 0}        
+Initialised : pSim->POINTOFCONCEPTPASSWORD[4] = {1, 3, 3, 7}         
+Initialised - -> Windowprocedure
+
+Windowprocedure - -> WM_COMMAND
+Windowprocedure - -> WM_DESTROY
+
+WM_DESTROY - -> [*]
+
+WM_COMMAND - -> CM_COIN_BUTTON_PRESSED : CHP_CheckCoins()
+CM_COIN_BUTTON_PRESSED : pSim->moneyInMachine = appropriate value
+CM_COIN_BUTTON_PRESSED : pSim->moneyInMachine = appropriate value
+
+WM_COMMAND - -> CM_DRINK_BUTTON_PRESSED : CHP_CheckIfEnough()
+CM_DRINK_BUTTON_PRESSED - -> UserDrinkSelection : If you could pay it / WTSB_Redraw()
+UserDrinkSelection - -> Dispense_Drink : Deposites left over money in change buffer
+Dispense_Drink - -> Windowprocedure : WTDB_Debug()/ WTDB_Display()
+
+CM_DRINK_BUTTON_PRESSED - -> Windowprocedure : If you couldn't pay it 
+
+WM_COMMAND - -> CM_CHANGE_BUTTON_PRESSED : CHP_ChangeHandeling
+CM_CHANGE_BUTTON_PRESSED - -> Windowprocedure : WTDB_Debug()/ WTDB_Display()
+
+WM_COMMAND - -> CM_DEBITCARD_BUTTON_PRESSED : PWDC_DebitcardHandeling()
+CM_DEBITCARD_BUTTON_PRESSED - -> Enter_debitcard : First time enters card
+CM_DEBITCARD_BUTTON_PRESSED - -> Enter_debitcard : Second time takes card
+Enter_debitcard - -> Windowprocedure : WTDB_Debug()/ WTDB_Display()
+
+WM_COMMAND - -> CM_PIN_BUTTON_PRESSED : PWDC_AddPincodeBuffer()
+CM_PIN_BUTTON_PRESSED - -> Store_In_Buffer
+Store_In_Buffer - -> Windowprocedure : WTDB_Debug()/ WTDB_Display()
+
+WM_COMMAND - -> CM_PIN_BUTTON_PRESSED_OK : PWDC_RemovePincodeBuffer()
+CM_PIN_BUTTON_PRESSED_OK - -> Store_In_Buffer : Check storebuffer against database or in this case pSim->POINTOFCONCEPTPASSWORD
+Store_In_Buffer - -> Windowprocedure : WTDB_Debug()/ WTDB_Display()
+
+WM_COMMAND - -> CM_PIN_BUTTON_PRESSED_DEL : PWDC_CheckPincode()
+CM_PIN_BUTTON_PRESSED_OK - -> Store_In_Buffer : Remove one digit form store buffer
+Store_In_Buffer - -> Windowprocedure : WTDB_Debug()/ WTDB_Display()
+
+WM_COMMAND - -> CM_MENU_ITEM_ADMIN : Grant admin right and gain debug money
+CM_MENU_ITEM_ADMIN - -> WM_COMMAND : WTDB_Debug()/ WTDB_Display()
+
+WM_COMMAND - -> CM_MENU_ITEM_AUTHOR : Displaying system infomation
+CM_MENU_ITEM_ADMIN - -> WM_COMMAND : WTDB_Debug()/ WTDB_Display()
+
+note right of Initialised #lime
+    initializing sim_t a struct that contents much of the system infomation,
+    and wil be accessed using pSim.
+end note
+
+note top of WM_COMMAND #lime
+    Because windows api use a lot of WM_COMMAND
+    I have simplified it to the base Commands.
+end note
+@enduml
+>>>>>>> 1f39ac6ab5967008155b12d34ad08605abdcf2be
 
 PlantUML version 1.2020.00(Sat Jan 11 12:30:53 UTC 2020)
 (GPL source distribution)
