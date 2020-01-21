@@ -12,13 +12,12 @@ package "System Control Layer" {
 }
 
 package "Subsystems Layer" {
-    [CoinHandelingProcedure]
-    [PayWithDebitCard]
-    [UserDrinkSelection]
-    [WriteToScreenbuffer]
-    [Initialization]
-    [WriteToDisplayBuffers]
-    [AppendToDisplayBuffers]
+    [Coin handeling]
+    [Debitcard functionality]
+    [Drink selection]
+    [Screenbuffer]
+    [Write to displaybuffers]
+    [Append to displaybuffers]
 }
 
 package "Hardware Abstraction Layer" {
@@ -28,18 +27,18 @@ package "Hardware Abstraction Layer" {
 [Windowprocedure] -up-> [Mouse]
 [Windowprocedure] -up-> [Display]
 
-[Windowprocedure] -down-> [CoinHandelingProcedure]
-[Windowprocedure] -down-> [PayWithDebitCard]
-[Windowprocedure] -down-> [UserDrinkSelection]
-[Windowprocedure] -down-> [WriteToScreenbuffer]
-[Windowprocedure] -down-> [Initialization]
-[Windowprocedure] -down-> [AppendToDisplayBuffers]
+[Windowprocedure] -down-> [Coin handeling]
+[Windowprocedure] -down-> [Debitcard functionality]
+[Windowprocedure] -down-> [Drink selection]
+[Windowprocedure] -down-> [Screenbuffer]
+[Windowprocedure] -down-> [Write to displaybuffers]
+[Windowprocedure] -down-> [Append to displaybuffers]
 
-[CoinHandelingProcedure] -down-> [Hardware IO]
-[PayWithDebitCard] -down-> [Hardware IO]
-[UserDrinkSelection] -down-> [Hardware IO]
-[WriteToScreenbuffer] -down-> [Hardware IO]
-[Initialization] -down-> [Hardware IO]
-[AppendToDisplayBuffers] -down-> [Hardware IO]
+[Coin handeling] -down-> [Hardware IO]
+[Debitcard functionality] -down-> [Hardware IO]
+[Drink selection] -down-> [Hardware IO]
+[Screenbuffer] -down-> [Hardware IO]
+[Write to displaybuffers] -down-> [Hardware IO]
+[Append to displaybuffers] -down-> [Hardware IO]
 
 @enduml

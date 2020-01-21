@@ -1,6 +1,6 @@
 @startuml
 
-title Windowprocedure Cola Vending Machine 5 GUI Edition
+title Windowprocedure Cola Vending Machine 5 GUI Edition 1 of 2
 
 [*] --> Initialised : Wm_CREATE, WM_PAINT, WM_CTLCOLORSTATIC / INIT_Button(), INIT_Static, INIT_Menu, INIT_Edit
 
