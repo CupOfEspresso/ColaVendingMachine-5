@@ -1,6 +1,8 @@
 @startuml
 
-title Windowprocedure Cola Vending Machine 5 GUI Edition 1 of 2
+title Windowprocedure Cola Vending Machine 5 GUI Edition
+
+scale 800*500
 
 [*] --> Initialised : Wm_CREATE, WM_PAINT, WM_CTLCOLORSTATIC / INIT_Button(), INIT_Static, INIT_Menu, INIT_Edit
 
@@ -25,6 +27,7 @@ WM_DESTROY --> [*]
 WM_COMMAND --> CM_COIN_BUTTON_PRESSED : CHP_CheckCoins()
 CM_COIN_BUTTON_PRESSED : pSim->moneyInMachine = appropriate value
 CM_COIN_BUTTON_PRESSED : pSim->moneyInMachine = appropriate value
+CM_COIN_BUTTON_PRESSED --> Windowprocedure
 
 WM_COMMAND --> CM_DRINK_BUTTON_PRESSED : CHP_CheckIfEnough()
 CM_DRINK_BUTTON_PRESSED --> UserDrinkSelection : If you could pay it / WTSB_Redraw()
@@ -50,14 +53,14 @@ CM_PIN_BUTTON_PRESSED_OK --> Store_In_Buffer : Check storebuffer against databas
 Store_In_Buffer --> Windowprocedure : WTDB_Debug()/ WTDB_Display()
 
 WM_COMMAND --> CM_PIN_BUTTON_PRESSED_DEL : PWDC_CheckPincode()
-CM_PIN_BUTTON_PRESSED_OK --> Store_In_Buffer : Remove one digit form store buffer
+CM_PIN_BUTTON_PRESSED_DEL --> Store_In_Buffer : Remove one digit form store buffer
 Store_In_Buffer --> Windowprocedure : WTDB_Debug()/ WTDB_Display()
 
 WM_COMMAND --> CM_MENU_ITEM_ADMIN : Grant admin right and gain debug money
 CM_MENU_ITEM_ADMIN --> WM_COMMAND : WTDB_Debug()/ WTDB_Display()
 
 WM_COMMAND --> CM_MENU_ITEM_AUTHOR : Displaying system infomation
-CM_MENU_ITEM_ADMIN --> WM_COMMAND : WTDB_Debug()/ WTDB_Display()
+CM_MENU_ITEM_AUTHOR --> WM_COMMAND : WTDB_Debug()/ WTDB_Display()
 
 note right of Initialised #lime
     initializing sim_t a struct that contents much of the system infomation,

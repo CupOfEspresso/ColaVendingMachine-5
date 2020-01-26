@@ -4,6 +4,7 @@ title Cola Vending Machine 5 GUI Edition
 
 package "User Interface Layer" {
     [Display]
+    [Debug Display]
     [Mouse]
 }
 
@@ -12,12 +13,11 @@ package "System Control Layer" {
 }
 
 package "Subsystems Layer" {
-    [Coin handeling]
-    [Debitcard functionality]
-    [Drink selection]
-    [Screenbuffer]
-    [Write to displaybuffers]
-    [Append to displaybuffers]
+    [Coin handler]
+    [Debitcard reader]
+    [Drink dispenser]
+    [Change dispenser]
+    [Drink selections buttons]
 }
 
 package "Hardware Abstraction Layer" {
@@ -26,19 +26,18 @@ package "Hardware Abstraction Layer" {
 
 [Windowprocedure] -up-> [Mouse]
 [Windowprocedure] -up-> [Display]
+[Windowprocedure] -up-> [Debug Display]
 
-[Windowprocedure] -down-> [Coin handeling]
-[Windowprocedure] -down-> [Debitcard functionality]
-[Windowprocedure] -down-> [Drink selection]
-[Windowprocedure] -down-> [Screenbuffer]
-[Windowprocedure] -down-> [Write to displaybuffers]
-[Windowprocedure] -down-> [Append to displaybuffers]
+[Windowprocedure] -down-> [Coin handler]
+[Windowprocedure] -down-> [Debitcard reader]
+[Windowprocedure] -down-> [Drink dispenser]
+[Windowprocedure] -down-> [Change dispenser]
+[Windowprocedure] -down-> [Drink selections buttons]
 
-[Coin handeling] -down-> [Hardware IO]
-[Debitcard functionality] -down-> [Hardware IO]
-[Drink selection] -down-> [Hardware IO]
-[Screenbuffer] -down-> [Hardware IO]
-[Write to displaybuffers] -down-> [Hardware IO]
-[Append to displaybuffers] -down-> [Hardware IO]
+[Coin handler] -down-> [Hardware IO]
+[Debitcard reader] -down-> [Hardware IO]
+[Drink dispenser] -down-> [Hardware IO]
+[Change dispenser] -down-> [Hardware IO]
+[Drink selections buttons] -down-> [Hardware IO]
 
 @enduml
