@@ -70,6 +70,12 @@
     <None Include="ColaVendingMachine-5-windowprocedure.puml">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\..\PUML\ColaVendingMachine-5-layer.puml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\PUML\ColaVendingMachine-5-windowprocedure.puml">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">

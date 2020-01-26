@@ -158,6 +158,8 @@
     <ClInclude Include="WriteToScreenBuffer.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\PUML\ColaVendingMachine-5-layer.puml" />
+    <None Include="..\..\PUML\ColaVendingMachine-5-windowprocedure.puml" />
     <None Include="ColaVendingMachine-5-windowprocedure.puml" />
     <None Include="ColaVendingMachine-5-layer.puml" />
   </ItemGroup>
